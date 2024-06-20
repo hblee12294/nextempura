@@ -4,3 +4,11 @@
     align-items: center;
     gap: 0.5rem;
 }
+
+.localeLink {
+    color: rgb(var(--foreground-tint-rgb));
+
+    &Active {
+        color: rgb(var(--foreground-rgb));
+    }
+}

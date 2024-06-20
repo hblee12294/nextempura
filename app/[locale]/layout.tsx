@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import "../globals.scss";
+import "@/styles/globals.scss";
 import styles from "./layout.module.scss";
 import { Header, Footer } from "@/components";
 import { DEFAULT_LOCALE } from "@/configs/locales";
@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Nextempura",
   description:
-    "A website template with Next.js 14, i18n and markdown docs supports",
+    "A web template with Next.js 14, i18n and markdown docs supports",
 };
 
 export default function RootLayout({
