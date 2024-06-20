@@ -1,5 +1,8 @@
 {
   "Header": {
     "contact": "Contact"
+  },
+  "Footer": {
+    "craftedBy": "Crafted by <a>Hblee</a>"
   }
 }
