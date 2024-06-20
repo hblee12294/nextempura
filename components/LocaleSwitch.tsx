@@ -1,22 +1,26 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
+// import { usePathname } from "next/navigation";
 import cn from "classnames";
 
 import styles from "./LocaleSwitch.module.scss";
 import { LOCALES } from "@/configs/locales";
 import { parseLocaleFromPath } from "@/utils";
+import { Link, usePathname, useRouter } from "../navigation";
 
 export function LocaleSwitch() {
-  const parsedPath = parseLocaleFromPath(usePathname());
+  // const parsedPath = parseLocaleFromPath(usePathname());
+  const pathname = usePathname();
+
+  console.log(pathname);
 
   return (
     <div className={styles.container}>
       {LOCALES.map((locale) => (
         <Link
           key={locale}
-          href={`/${locale}${parsedPath.pathname}`}
+          locale={locale}
+          href={pathname}
           className={cn(styles.localeLink)}
         >
           {locale}
