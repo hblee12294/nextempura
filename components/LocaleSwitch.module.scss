@@ -2,13 +2,24 @@
     display: grid;
     grid-auto-flow: column;
     align-items: center;
-    gap: 0.5rem;
+    gap: 1rem;
 }
 
 .localeLink {
+    position: relative;
     color: rgb(var(--foreground-tint-rgb));
 
     &Active {
         color: rgb(var(--foreground-rgb));
+    }
+
+    &:not(:last-child)::after {
+        content: '/';
+        font-size: 0.6em;
+        color: rgb(var(--foreground-tint-rgb));
+        position: absolute;
+        right: -0.5rem;
+        top: 50%;
+        transform: translate(50%, -50%);
     }
 }
