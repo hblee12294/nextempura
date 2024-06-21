@@ -1,26 +1,26 @@
 .container {
-    display: grid;
-    grid-auto-flow: column;
-    align-items: center;
-    gap: 1rem;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .localeLink {
-    position: relative;
-    color: rgb(var(--foreground-tint-rgb));
-    font-size: 14px;
+  position: relative;
+  color: rgb(var(--font-color-tint-rgb));
+  font-size: var(--font-size-footer);
 
-    &Active {
-        color: rgb(var(--foreground-rgb));
-    }
+  &Active {
+    color: rgb(var(--font-color-rgb));
+  }
 
-    &:not(:last-child)::after {
-        content: '/';
-        font-size: 0.6em;
-        color: rgb(var(--foreground-tint-rgb));
-        position: absolute;
-        right: -0.5rem;
-        top: 50%;
-        transform: translate(50%, -50%);
-    }
+  &:not(:last-child)::after {
+    content: "/";
+    font-size: 0.6em;
+    color: rgb(var(--font-color-tint-rgb));
+    position: absolute;
+    right: -0.5rem;
+    top: 50%;
+    transform: translate(50%, -50%);
+  }
 }

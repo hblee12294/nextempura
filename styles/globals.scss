@@ -1,12 +1,14 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --foreground-rgb: 0, 0, 0;
-  --foreground-tint-rgb: 100, 100, 100;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
+    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-size: 16px;
+  --font-size-footer: 14px;
+
+  --font-color-rgb: 0, 0, 0;
+  --font-color-tint-rgb: 100, 100, 100;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
 
@@ -18,8 +20,8 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --foreground-tint-rgb: 155, 155, 155;
+    --font-color-rgb: 255, 255, 255;
+    --font-color-tint-rgb: 155, 155, 155;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
 
@@ -37,8 +39,9 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
+  color: rgb(var(--font-color-rgb));
   background: rgb(var(--background-start-rgb));
+  font-size: var(--font-size);
 }
 
 a {
