@@ -2,6 +2,7 @@
 
 import { usePathname as useFullPathname } from "next/navigation";
 import cn from "classnames";
+import { useTranslations } from "next-intl";
 
 import styles from "./LocaleSwitch.module.scss";
 import { LOCALES } from "@/configs/locales";
@@ -9,6 +10,8 @@ import { parseLocaleFromPath } from "@/utils";
 import { Link } from "@/navigation";
 
 export function LocaleSwitch() {
+  const t = useTranslations("Locale");
+
   const parsedPath = parseLocaleFromPath(useFullPathname());
   const currentLocale = parsedPath.locale;
   const pathname = parsedPath.pathname;
@@ -24,7 +27,7 @@ export function LocaleSwitch() {
             [styles.localeLinkActive]: locale === currentLocale,
           })}
         >
-          {locale}
+          {t(locale)}
         </Link>
       ))}
     </div>

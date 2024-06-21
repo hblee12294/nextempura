@@ -8,6 +8,7 @@
 .localeLink {
     position: relative;
     color: rgb(var(--foreground-tint-rgb));
+    font-size: 14px;
 
     &Active {
         color: rgb(var(--foreground-rgb));

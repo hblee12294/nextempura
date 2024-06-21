@@ -4,5 +4,9 @@
   },
   "Footer": {
     "craftedBy": "由 <a>Hblee</a> 用心制作"
+  },
+  "Locale": {
+    "en": "English",
+    "zh": "中文"
   }
 }
