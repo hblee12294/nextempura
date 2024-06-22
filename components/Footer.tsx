@@ -19,7 +19,7 @@ export function Footer() {
       <div className={styles.credit}>
         {t.rich("craftedBy", {
           a: (chunks: any) => (
-            <Link href="https://hongbinli.com" target="_blank">
+            <Link href="https://hongbinli.com" target="_blank" className={styles.authorLink}>
               {chunks}
             </Link>
           ),
