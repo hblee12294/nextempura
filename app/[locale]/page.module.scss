@@ -1,4 +1,9 @@
 .main {
-  flex: 1;
-  min-height: 0;
+  height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+.banner {
+  width: 100%;
+  height: 100%;
+  padding: 0 var(--page-padding-hrz);
 }

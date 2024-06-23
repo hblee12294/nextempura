@@ -8,6 +8,12 @@
   --font-size-logo: 18px;
   --font-size-footer: 14px;
 
+  --page-padding-vrt: 2rem;
+  --page-padding-hrz: 3.5rem;
+
+  --header-height: calc(26px + var(--page-padding-vrt) * 2);
+  --footer-height: calc(20px + var(--page-padding-vrt) * 2);
+
   --font-color-rgb: 0, 0, 0;
   --font-color-tint-rgb: 100, 100, 100;
   --background-start-rgb: 214, 219, 220;

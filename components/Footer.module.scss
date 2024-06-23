@@ -3,7 +3,7 @@
   grid-auto-flow: column;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: var(--page-padding-vrt) var(--page-padding-hrz);
   font-size: var(--font-size-footer);
   color: rgb(var(--font-color-tint-rgb));
 }
