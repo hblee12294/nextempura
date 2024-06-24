@@ -9,7 +9,7 @@ export function Nav() {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <Link href="/about">{t("about")}</Link>
+        <Link href="/about" className={styles.navLink}>{t("about")}</Link>
       </nav>
     </div>
   );

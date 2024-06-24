@@ -10,7 +10,9 @@ export function Header() {
   return (
     <header className={styles.container}>
       <div className={styles.logo}>
-        <Link href="/">Nextempura</Link>
+        <Link href="/" className={styles.logoLink}>
+          Nextempura
+        </Link>
       </div>
 
       <Nav></Nav>

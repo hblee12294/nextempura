@@ -4,3 +4,14 @@
   align-items: center;
   gap: 3rem;
 }
+
+.nav {
+  display: grid;
+  grid-auto-flow: column;
+}
+
+.navLink {
+  display: inline-block;
+  font-size: var(--font-size-nav);
+  font-weight: 500;
+}

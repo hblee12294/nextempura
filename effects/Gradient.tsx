@@ -30,9 +30,7 @@ export function Gradient() {
     const backgroundColor = "#ffffff";
     const width = window.innerWidth;
     const height = window.innerHeight;
-    const totalFrames = 1000;
     let frameCount = 0;
-    let recording = false;
 
     let delta = 0;
     let delta1 = 0;
@@ -41,12 +39,10 @@ export function Gradient() {
 
     p5.setup = () => {
       p5.createCanvas(stage.clientWidth, stage.clientHeight, p5.WEBGL);
-      p5.noiseSeed(0);
     };
 
     p5.draw = () => {
       frameCount += 1;
-      let frameDelta = (2 * Math.PI * (frameCount % totalFrames)) / totalFrames;
 
       let bg = p5.color(backgroundColor);
       p5.background(bg);
@@ -91,7 +87,7 @@ export function Gradient() {
           let waveSize = 15;
           let y0 = y + p5.sin(delta3 + j + x) * waveSize;
 
-          delta3 += 0.00002;
+          delta3 += 0.000008;
 
           let y2 = y + size * 1.2 + p5.sin(delta3 + j + x) * waveSize;
 
@@ -138,7 +134,7 @@ export function Gradient() {
           let y0 = y + p5.sin(delta2 + j + x) * waveSize;
           y0 += p5.sin((delta2 + j + x) * 10) * 5;
 
-          delta2 += 0.00005;
+          delta2 += 0.00001;
 
           let y2 = y + size * 1.2 + p5.sin(delta2 + j + x) * waveSize;
           y2 += p5.sin((delta2 + j + x) * 10) * 5;
@@ -185,7 +181,7 @@ export function Gradient() {
           let waveSize = 10;
           let y0 = y + p5.sin(delta1 + j + x) * waveSize;
 
-          delta1 += 0.00005;
+          delta1 += 0.00001;
 
           let y2 = y + size * 1.2 + p5.sin(delta1 + j + x) * waveSize;
 
@@ -234,7 +230,7 @@ export function Gradient() {
           let y0 = y + p5.sin(d) * waveSize;
           y0 += p5.sin(d * 10) * 10;
 
-          delta += 0.00001;
+          delta += 0.000005;
 
           let d2 = delta + j + x;
           let y2 = y + size * 1.2 + p5.sin(d2) * waveSize;

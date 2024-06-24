@@ -7,6 +7,11 @@
 }
 
 .logo {
+  font-size: 0;
+}
+
+.logoLink {
+  display: inline-block;
   font-size: var(--font-size-logo);
   font-weight: bold;
 }
