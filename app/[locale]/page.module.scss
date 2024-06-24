@@ -1,5 +1,8 @@
+@use "@/styles/mixins.scss" as *;
+
 .main {
-  height: calc(100vh - var(--header-height) - var(--footer-height));
+  @include maxWidthPage;
+  @include fullscreen;
 }
 
 .banner {

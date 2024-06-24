@@ -1,0 +1,12 @@
+@mixin maxWidthPage {
+    max-width: var(--max-page-width);
+    margin: 0 auto;
+}
+
+@mixin fullscreen {
+    height: calc(100vh - var(--header-height) - var(--footer-height));
+}
+
+@mixin minFullscreen {
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+}
