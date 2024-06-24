@@ -2,6 +2,7 @@ import { useTranslations } from "next-intl";
 
 import styles from "./Nav.module.scss";
 import { Link } from "@/navigation";
+import { NAVS } from "@/configs/navs";
 
 export function Nav() {
   const t = useTranslations("Header");
@@ -9,7 +10,11 @@ export function Nav() {
   return (
     <div className={styles.container}>
       <nav className={styles.nav}>
-        <Link href="/about" className={styles.navLink}>{t("about")}</Link>
+        {NAVS.map(({ id, path }) => (
+          <Link key={id} href={path} className={styles.navLink}>
+            {t(id)}
+          </Link>
+        ))}
       </nav>
     </div>
   );
