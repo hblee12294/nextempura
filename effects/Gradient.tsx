@@ -4,6 +4,10 @@ import { useRef, useCallback } from "react";
 import { P5CanvasInstance, type Sketch } from "@p5-wrapper/react";
 import { NextReactP5Wrapper } from "@p5-wrapper/next";
 
+/**
+ * Gradient effect by @cjgammon: https://codepen.io/cjgammon/pen/WNZxOOx
+ */
+
 export function Gradient() {
   const stageRef = useRef<HTMLDivElement>(null);
 

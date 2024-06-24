@@ -1,7 +1,16 @@
 .container {
+  position: relative;
   height: 100%;
   width: 100%;
   border-radius: 20px;
   overflow: hidden;
   background-image: linear-gradient(30deg, #e45064 45%, #4282b6 70%);
+}
+
+.credit {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  color: #ffffff;
+  font-size: 12px;
 }
