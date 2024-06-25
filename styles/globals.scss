@@ -17,11 +17,6 @@
   --font-color-rgb: 0, 0, 0;
   --font-color-tint-rgb: 100, 100, 100;
   --background-rgb: 245, 245, 245;
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,11 +24,6 @@
     --font-color-rgb: 255, 255, 255;
     --font-color-tint-rgb: 155, 155, 155;
     --background-rgb: 10, 10, 10;
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
   }
 }
 
@@ -55,8 +45,24 @@ a {
   text-decoration: none;
 }
 
-// @media (prefers-color-scheme: dark) {
-//   html {
-//     color-scheme: dark;
-//   }
-// }
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+  :root {
+    --page-padding-vrt: 1rem;
+    --page-padding-hrz: 1.5rem;
+  }
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+  :root {
+    --page-padding-vrt: 1.5rem;
+    --page-padding-hrz: 2.5rem;
+  }
+}
