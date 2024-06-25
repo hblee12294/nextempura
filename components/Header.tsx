@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import styles from "./Header.module.scss";
 import { Nav } from "./Nav";
 import { Link } from "@/navigation";
+import { NAV_ITEMS } from "@/configs/navs";
 
 export function Header() {
   const t = useTranslations("Header");
@@ -15,7 +16,12 @@ export function Header() {
         </Link>
       </div>
 
-      <Nav></Nav>
+      <Nav
+        navItems={NAV_ITEMS.map((navItem) => ({
+          ...navItem,
+          name: t(navItem.id),
+        }))}
+      ></Nav>
     </header>
   );
 }

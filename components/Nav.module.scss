@@ -12,7 +12,57 @@
 }
 
 .navLink {
+  position: relative;
   display: inline-block;
   font-size: var(--font-size-nav);
   font-weight: 500;
+
+  $border-raduis: 2px;
+  $bar-height: 6px;
+  $bar-width: 1rem;
+  $bar-rotate: 30deg;
+  $bar-tx: 80%;
+  $transition-duration: 0.2s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    height: $bar-height;
+    width: $bar-width;
+    border-radius: $border-raduis;
+    z-index: -1;
+    transition: $transition-duration;
+    background-color: transparent;
+    transform: translate(-$bar-tx, 100%) rotate(0deg);
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    height: $bar-height;
+    width: $bar-width;
+    border-radius: $border-raduis;
+    z-index: -1;
+    transition: $transition-duration;
+    background-color: transparent;
+    transform: translate($bar-tx, 100%) rotate(0deg);
+  }
+
+  &:hover {
+    &::before {
+      background-color: #e45064;
+      transform: translate(-$bar-tx, 100%) rotate($bar-rotate);
+    }
+    &::after {
+      background-color: #3674ae;
+      transform: translate($bar-tx, -20%) rotate($bar-rotate);
+    }
+  }
+
+  &.active {
+  }
 }
