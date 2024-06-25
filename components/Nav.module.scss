@@ -18,10 +18,11 @@
   font-weight: 500;
 
   $border-raduis: 2px;
-  $bar-height: 6px;
+  $bar-height: 4px;
   $bar-width: 1rem;
   $bar-rotate: 30deg;
-  $bar-tx: 80%;
+  $bar-tx: 50%;
+  $bar-end-tx: 0%;
   $transition-duration: 0.2s;
 
   &::before {
@@ -35,7 +36,7 @@
     z-index: -1;
     transition: $transition-duration;
     background-color: transparent;
-    transform: translate(-$bar-tx, 100%) rotate(0deg);
+    transform: translate(-$bar-tx, 100%);
   }
 
   &::after {
@@ -49,20 +50,32 @@
     z-index: -1;
     transition: $transition-duration;
     background-color: transparent;
-    transform: translate($bar-tx, 100%) rotate(0deg);
+    transform: translate($bar-tx, -50%);
   }
 
   &:hover {
     &::before {
       background-color: #e45064;
-      transform: translate(-$bar-tx, 100%) rotate($bar-rotate);
+      transform: translate(-$bar-end-tx, 100%);
     }
+
     &::after {
       background-color: #3674ae;
-      transform: translate($bar-tx, -20%) rotate($bar-rotate);
+      transform: translate($bar-end-tx, -50%);
     }
   }
 
   &.active {
+    &::before {
+      background-color: #e45064;
+      transform: translate(-$bar-end-tx, 100%);
+      width: 100%;
+    }
+
+    &::after {
+      background-color: #3674ae;
+      transform: translate($bar-end-tx, -50%);
+      width: 100%;
+    }
   }
 }
