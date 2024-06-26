@@ -6,6 +6,7 @@
   display: grid;
   grid-template-columns: 1fr auto;
   padding: var(--page-padding-vrt) var(--page-padding-hrz);
+  z-index: 1;
 
   @include maxWidthPage;
 }

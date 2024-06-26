@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Noto_Sans_SC } from "next/font/google";
 
 import "@/styles/globals.scss";
-import styles from "./layout.module.scss";
 import { Header, Footer } from "@/components";
 import { DEFAULT_LOCALE } from "@/configs/locales";
 
@@ -24,13 +23,11 @@ export default function RootLayout({
   return (
     <html lang={params.locale || DEFAULT_LOCALE}>
       <body className={font.className}>
-        <div className={styles.layout}>
-          <Header></Header>
+        <Header></Header>
 
-          {children}
+        {children}
 
-          <Footer></Footer>
-        </div>
+        <Footer></Footer>
       </body>
     </html>
   );
