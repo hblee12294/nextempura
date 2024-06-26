@@ -1,7 +1,8 @@
 @use "@/styles/mixins.scss" as *;
 
 .page {
-  padding: 0 var(--page-padding-hrz);
+  display: grid;
+  grid-template-columns: 1fr 300px;
 
   @include maxWidthPage;
   @include minFullscreen;

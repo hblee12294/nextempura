@@ -1,6 +1,6 @@
 @use "@/styles/mixins.scss" as *;
 
-.main {
+.page {
   padding: 0 var(--page-padding-hrz);
 
   @include maxWidthPage;

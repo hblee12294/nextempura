@@ -29,11 +29,11 @@
 
 * {
   box-sizing: border-box;
-  padding: 0;
-  margin: 0;
 }
 
 body {
+  padding: 0;
+  margin: 0;
   color: rgb(var(--font-color-rgb));
   background: rgb(var(--background-rgb));
   font-size: var(--font-size);

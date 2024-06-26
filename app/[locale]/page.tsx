@@ -7,7 +7,7 @@ export default function Home() {
   const t = useTranslations("Header");
 
   return (
-    <main className={styles.main}>
+    <main className={styles.page}>
       <div className={styles.banner}>
         <Banner></Banner>
       </div>

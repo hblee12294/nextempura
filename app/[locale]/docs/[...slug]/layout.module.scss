@@ -1,0 +1,10 @@
+@use "@/styles/mixins.scss" as *;
+
+.layout {
+    padding: 0 var(--page-padding-hrz);
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    @include maxWidthPage;
+    @include minFullscreen;
+}
