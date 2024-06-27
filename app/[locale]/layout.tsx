@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Noto_Sans_SC } from "next/font/google";
 
 import "@/styles/globals.scss";
-import { Header, Footer } from "@/components";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { DEFAULT_LOCALE } from "@/configs/locales";
 
 const font = Noto_Sans_SC({ subsets: ["latin"] });

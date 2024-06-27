@@ -1,5 +1,5 @@
 import styles from "./layout.module.scss";
-import { SideNav } from "@/components";
+import { SideNav } from "@/components/SideNav";
 import { getDocTree } from "@/utils/docs";
 
 export default async function Layout({

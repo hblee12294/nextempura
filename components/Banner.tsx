@@ -1,6 +1,6 @@
 import styles from "./Banner.module.scss";
 
-import { Gradient } from "@/effects";
+import { Gradient } from "@/effects/Gradient";
 
 export function Banner() {
   return (

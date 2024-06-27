@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 
 import styles from "./LocaleSwitch.module.scss";
 import { LOCALES } from "@/configs/locales";
-import { parseLocaleFromPath } from "@/utils";
+import { parseLocaleFromPath } from "@/utils/parseLocaleFromPath";
 import { Link } from "@/navigation";
 
 export function LocaleSwitch() {

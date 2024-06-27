@@ -1,7 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import styles from "./Header.module.scss";
-import { Nav } from "./Nav";
+import { Nav } from "@/components/Nav";
 import { Link } from "@/navigation";
 import { NAV_ITEMS } from "@/configs/navs";
 

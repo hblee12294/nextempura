@@ -4,7 +4,7 @@ import {
   NextIntlClientProvider,
   useMessages,
 } from "next-intl";
-import { LocaleSwitch } from "./LocaleSwitch";
+import { LocaleSwitch } from "@/components/LocaleSwitch";
 import pick from "lodash/pick";
 
 import styles from "./Footer.module.scss";
@@ -19,7 +19,11 @@ export function Footer() {
       <div className={styles.credit}>
         {t.rich("craftedBy", {
           a: (chunks: any) => (
-            <Link href="https://hongbinli.com" target="_blank" className={styles.authorLink}>
+            <Link
+              href="https://hongbinli.com"
+              target="_blank"
+              className={styles.authorLink}
+            >
               {chunks}
             </Link>
           ),
