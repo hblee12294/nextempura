@@ -7,11 +7,16 @@
   align-items: center;
   padding: var(--page-padding-vrt) var(--page-padding-hrz);
   font-size: var(--font-size-footer);
-  color: rgb(var(--font-color-tint-rgb));
+  color: rgb(var(--font-color-weak-rgb));
 
   @include maxWidthPage;
 }
 
 .authorLink {
-  color: rgb(var(--font-color-rgb));
+  color: rgb(var(--font-color-inactive-rgb));
+  transition: var(--duration);
+
+  &:hover {
+    color: rgb(var(--font-color-hover-rgb));
+  }
 }

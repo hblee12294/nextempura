@@ -11,18 +11,24 @@
   --page-padding-vrt: 2rem;
   --page-padding-hrz: 3.5rem;
 
+  --duration: 0.2s;
+
   --header-height: calc(var(--font-size-logo) * 1.5 + var(--page-padding-vrt) * 2);
   --footer-height: calc(var(--font-size-footer) * 1.5 + var(--page-padding-vrt) * 2);
 
   --font-color-rgb: 0, 0, 0;
-  --font-color-tint-rgb: 100, 100, 100;
+  --font-color-weak-rgb: 150, 150, 150;
+  --font-color-inactive-rgb: 100, 100, 100;
+  --font-color-hover-rgb: 50, 50, 50;
   --background-rgb: 245, 245, 245;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --font-color-rgb: 255, 255, 255;
-    --font-color-tint-rgb: 155, 155, 155;
+    --font-color-weak-rgb: 105, 105, 105;
+    --font-color-inactive-rgb: 155, 155, 155;
+    --font-color-hover-rgb: 205, 205, 205;
     --background-rgb: 10, 10, 10;
   }
 }

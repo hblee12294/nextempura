@@ -7,17 +7,26 @@
 
 .localeLink {
   position: relative;
-  color: rgb(var(--font-color-tint-rgb));
+  color: rgb(var(--font-color-inactive-rgb));
   font-size: var(--font-size-footer);
+  transition: var(--duration);
+
+  &:hover {
+    color: rgb(var(--font-color-hover-rgb));
+  }
 
   &Active {
     color: rgb(var(--font-color-rgb));
+
+    &:hover {
+      color: rgb(var(--font-color-rgb));
+    }
   }
 
   &:not(:last-child)::after {
     content: "/";
     font-size: 0.6em;
-    color: rgb(var(--font-color-tint-rgb));
+    color: rgb(var(--font-color-inactive-rgb));
     position: absolute;
     right: -0.5rem;
     top: 50%;

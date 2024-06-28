@@ -22,7 +22,7 @@ export function Nav({ navItems }: NavProps) {
             key={id}
             href={path}
             className={cn(styles.navLink, {
-              [styles.active]: navID === id,
+              [styles.navLinkActive]: navID === id,
             })}
           >
             {name}
