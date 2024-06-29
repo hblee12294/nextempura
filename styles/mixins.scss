@@ -1,4 +1,4 @@
-@mixin maxWidthPage {
+@mixin max-width-page {
     max-width: var(--max-page-width);
     margin: 0 auto;
 }
@@ -7,6 +7,36 @@
     height: calc(100dvh - var(--header-height) - var(--footer-height));
 }
 
-@mixin minFullscreen {
+@mixin min-fullscreen {
     min-height: calc(100dvh - var(--header-height) - var(--footer-height));
+}
+
+@mixin device($point) {
+    /* Mobile */
+    $s: "(max-width: 768px)";
+    /* Tablet and Smaller Desktop */
+    $m: "(min-width: 769px) and (max-width: 1536px)";
+
+    @if $point == s {
+        @media #{$s} {
+            @content;
+        }
+    } @else if $point == m {
+        @media #{$m} {
+            @content;
+        }
+    }
+}
+
+/* Enable hover only on non-touch devices */
+@mixin hoverable {
+    @media (hover: hover) and (pointer: fine) {
+        @content;
+    }
+}
+
+@mixin reduced-motion {
+    @media (prefers-reduced-motion) {
+        @content;
+    }
 }

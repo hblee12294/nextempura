@@ -8,7 +8,7 @@
   padding: var(--page-padding-vrt) var(--page-padding-hrz);
   z-index: 1;
 
-  @include maxWidthPage;
+  @include max-width-page;
 }
 
 .logo {

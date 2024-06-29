@@ -1,7 +1,7 @@
 @use "@/styles/mixins.scss" as *;
 
 .page {
-  @include maxWidthPage;
+  @include max-width-page;
   @include fullscreen;
 }
 

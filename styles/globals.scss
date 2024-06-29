@@ -1,5 +1,7 @@
+@use "@/styles/mixins.scss" as *;
+
 :root {
-  --max-page-width: 1560px;
+  --max-page-width: 1536px;
 
   --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
     "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
@@ -31,6 +33,10 @@
     --font-color-hover-rgb: 205, 205, 205;
     --background-rgb: 10, 10, 10;
   }
+
+  html {
+    color-scheme: dark;
+  }
 }
 
 * {
@@ -51,22 +57,14 @@ a {
   text-decoration: none;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-}
-
-/* Mobile */
-@media (max-width: 700px) {
+@include device("s") {
   :root {
     --page-padding-vrt: 1rem;
     --page-padding-hrz: 1.5rem;
   }
 }
 
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
+@include device("m") {
   :root {
     --page-padding-vrt: 1.5rem;
     --page-padding-hrz: 2.5rem;

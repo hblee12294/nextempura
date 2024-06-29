@@ -9,7 +9,7 @@
   font-size: var(--font-size-footer);
   color: rgb(var(--font-color-weak-rgb));
 
-  @include maxWidthPage;
+  @include max-width-page;
 }
 
 .authorLink {

@@ -1,3 +1,5 @@
+@use "@/styles/mixins.scss" as *;
+
 $nav-link-top-bar-hex: #3674ae;
 $nav-link-bottom-bar-hex: #e45064;
 $nav-link-border-raduis: 2px;
@@ -69,7 +71,7 @@ $nav-link-bar-end-tx: 0%;
   }
 }
 
-@media (hover: hover) and (pointer: fine) {
+@include hoverable {
   .navLink:hover {
     &::before {
       background-color: $nav-link-bottom-bar-hex;
@@ -83,7 +85,7 @@ $nav-link-bar-end-tx: 0%;
   }
 }
 
-@media (prefers-reduced-motion) {
+@include reduced-motion {
   .navLink {
     &::before {
       background-color: $nav-link-bottom-bar-hex;

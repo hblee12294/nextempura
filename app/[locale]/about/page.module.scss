@@ -3,24 +3,5 @@
 .page {
   padding: 0 var(--page-padding-hrz);
 
-  @include maxWidthPage;
-  @include minFullscreen;
-}
-
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-}
-
-@media (prefers-reduced-motion) {
-}
-
-/* Mobile */
-@media (max-width: 700px) {
-}
-
-/* Tablet and Smaller Desktop */
-@media (min-width: 701px) and (max-width: 1120px) {
-}
-
-@media (prefers-color-scheme: dark) {
+  @include min-fullscreen;
 }

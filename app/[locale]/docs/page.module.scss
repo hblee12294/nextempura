@@ -3,6 +3,6 @@
 .page {
   padding: 0 var(--page-padding-hrz);
 
-  @include maxWidthPage;
-  @include minFullscreen;
+  @include max-width-page;
+  @include min-fullscreen;
 }
