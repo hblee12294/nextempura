@@ -9,5 +9,19 @@
   "Locale": {
     "en": "English",
     "zh": "中文"
+  },
+  "Products": {
+    "ebi": {
+      "name": "Ebi",
+      "description": "Ebi are a popular tempura ingredient that can be found on virtually all tempura dishes."
+    },
+    "sakana": {
+      "name": "Sakana",
+      "description": "Sakana are small fillets or whole small fish which are made into tempura pieces."
+    },
+    "kabocha": {
+      "name": "Kabocha",
+      "description": "Kabocha are Japanese pumpkin with a thin, typically dark green skin and orange flesh."
+    }
   }
 }

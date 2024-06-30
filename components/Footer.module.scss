@@ -1,6 +1,8 @@
 @use "@/styles/mixins.scss" as *;
 
 .container {
+  @include max-width-page;
+
   display: grid;
   grid-auto-flow: column;
   justify-content: space-between;
@@ -8,8 +10,6 @@
   padding: var(--page-padding-vrt) var(--page-padding-hrz);
   font-size: var(--font-size-footer);
   color: rgb(var(--font-color-weak-rgb));
-
-  @include max-width-page;
 }
 
 .authorLink {

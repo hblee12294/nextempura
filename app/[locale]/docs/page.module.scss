@@ -1,8 +1,24 @@
 @use "@/styles/mixins.scss" as *;
 
 .page {
-  padding: 0 var(--page-padding-hrz);
-
   @include max-width-page;
   @include min-fullscreen;
+
+  padding: 1rem var(--page-padding-hrz);
+}
+
+.productsGrid {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+.coverImage {
+  height: 500px;
+  background-color: #606060;
+  border-radius: var(--border-radius-card);
+  overflow: hidden;
 }

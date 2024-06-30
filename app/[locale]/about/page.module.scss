@@ -1,7 +1,7 @@
 @use "@/styles/mixins.scss" as *;
 
 .page {
-  padding: 0 var(--page-padding-hrz);
-
   @include min-fullscreen;
+
+  padding: 0 var(--page-padding-hrz);
 }

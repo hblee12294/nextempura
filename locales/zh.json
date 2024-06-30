@@ -9,5 +9,19 @@
   "Locale": {
     "en": "English",
     "zh": "中文"
+  },
+  "Products": {
+    "ebi": {
+      "name": "Ebi",
+      "description": "Ebi 是一种很受欢迎的天妇罗配料，几乎可以在所有天妇罗菜肴中找到。"
+    },
+    "sakana": {
+      "name": "Sakana",
+      "description": "Sakana 是将小鱼片或整条小鱼做成的天妇罗块。"
+    },
+    "kabocha": {
+      "name": "Kabocha",
+      "description": "Kabocha 是一种日本南瓜，皮薄，通常呈深绿色，果肉呈橙色。"
+    }
   }
 }
