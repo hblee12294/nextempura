@@ -16,7 +16,9 @@
   color: rgb(var(--font-color-inactive-rgb));
   transition: var(--duration);
 
-  &:hover {
-    color: rgb(var(--font-color-hover-rgb));
+  @include hoverable {
+    &:hover {
+      color: rgb(var(--font-color-hover-rgb));
+    }
   }
 }

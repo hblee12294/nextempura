@@ -13,14 +13,13 @@
   --page-padding-vrt: 2rem;
   --page-padding-hrz: 3.5rem;
 
-  @include device("s") {
-    --page-padding-vrt: 1rem;
-    --page-padding-hrz: 1.5rem;
-  }
-
   @include device("m") {
     --page-padding-vrt: 1.5rem;
     --page-padding-hrz: 2.5rem;
+  }
+  @include device("s") {
+    --page-padding-vrt: 1rem;
+    --page-padding-hrz: 1.5rem;
   }
 
   --border-radius-banner: 20px;
@@ -34,7 +33,10 @@
   --font-color-weak-rgb: 150, 150, 150;
   --font-color-inactive-rgb: 100, 100, 100;
   --font-color-hover-rgb: 50, 50, 50;
+  --font-color-minor-rgb: 80, 80, 80;
   --background-rgb: 245, 245, 245;
+  --placeholder-rgb: 235, 235, 235;
+  --placeholder-2-rgb: 215, 215, 215;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -43,7 +45,10 @@
     --font-color-weak-rgb: 105, 105, 105;
     --font-color-inactive-rgb: 155, 155, 155;
     --font-color-hover-rgb: 205, 205, 205;
+    --font-color-minor-rgb: 175, 175, 175;
     --background-rgb: 10, 10, 10;
+    --placeholder-rgb: 20, 20, 20;
+    --placeholder-2-rgb: 40, 40, 40;
   }
 
   html {

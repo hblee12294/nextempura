@@ -1,4 +1,5 @@
 import { useTranslations } from "next-intl";
+import cn from "classnames";
 
 import styles from "./page.module.scss";
 import { PRODUCTS } from "@/configs/products";
@@ -11,15 +12,20 @@ export default function Docs() {
   return (
     <div className={styles.page}>
       <ul className={styles.productsGrid}>
-        {PRODUCTS.map(({ id, docPath }, i) => {
+        {PRODUCTS.map(({ id, docPath }, index) => {
           return (
             <li key={id} className={styles.productBlock}>
               <Link href={`/docs/${docPath}`}>
                 <div className={styles.coverImage}>
-                  <BlobIcon className={styles.icon}></BlobIcon>
+                  <BlobIcon
+                    className={cn(
+                      styles.icon,
+                      styles[`morph${(index % 3) + 1}`]
+                    )}
+                  ></BlobIcon>
                 </div>
-                <h3>{t(`${id}.name`)}</h3>
-                <p>{t(`${id}.description`)}</p>
+                <h3 className={styles.productTitle}>{t(`${id}.name`)}</h3>
+                <p className={styles.productDesc}>{t(`${id}.description`)}</p>
               </Link>
             </li>
           );

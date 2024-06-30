@@ -14,11 +14,17 @@
 @mixin device($point) {
     /* Mobile */
     $s: "(max-width: 768px)";
+    /* Tablet */
+    $s-m: "(min-width: 769px) and (max-width: 1024px)";
     /* Tablet and Smaller Desktop */
     $m: "(min-width: 769px) and (max-width: 1536px)";
 
     @if $point == s {
         @media #{$s} {
+            @content;
+        }
+    } @else if $point == s-m {
+        @media #{$s-m} {
             @content;
         }
     } @else if $point == m {

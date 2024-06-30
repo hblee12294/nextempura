@@ -1,10 +1,12 @@
 @use "@/styles/mixins.scss" as *;
 
+$morph-duration: 20s;
+
 .page {
   @include max-width-page;
   @include min-fullscreen;
 
-  padding: 1rem var(--page-padding-hrz);
+  padding: 1rem var(--page-padding-hrz) 3rem;
 }
 
 .productsGrid {
@@ -12,7 +14,18 @@
   padding: 0;
   margin: 0;
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
+  @include device("s-m") {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem;
+  }
+  @include device("s") {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+  }
+
   gap: 3rem;
   width: 100%;
   overflow: hidden;
@@ -25,14 +38,118 @@
 
 .coverImage {
   height: 400px;
-  background-color: #606060;
-  padding: 1rem;
+
+  @include device("m") {
+    height: 360px;
+  }
+  @include device("s") {
+    height: 300px;
+  }
+
+  background-color: rgb(var(--placeholder-rgb));
+
+  @include hoverable {
+    .productBlock:hover & {
+      background-color: rgb(var(--placeholder-2-rgb));
+    }
+  }
+
+  padding: 1.5rem;
   border-radius: var(--border-radius-card);
   overflow: hidden;
+  transition: background-color var(--duration);
+}
+
+.productTitle {
+  margin: 1rem 0;
+}
+
+.productDesc {
+  color: rgb(var(--font-color-minor-rgb));
+  margin: 0;
 }
 
 .icon {
   width: 100%;
   height: 100%;
   object-fit: contain;
+  transform-origin: 50% 50%;
+}
+
+.morph1 {
+  fill: #e45064;
+  animation: morph1 $morph-duration ease-in-out infinite;
+}
+
+.morph2 {
+  fill: #3271ac;
+  animation: morph2 $morph-duration ease-in-out infinite;
+}
+
+.morph3 {
+  fill: #ef9f50;
+  animation: morph3 $morph-duration ease-in-out infinite;
+}
+
+@keyframes morph1 {
+  0% {
+    transform: scale(0.8) rotate(0deg);
+  }
+  20% {
+    transform: scale(0.8, 1) rotate(160deg);
+  }
+  40% {
+    transform: scale(1, 1.1) rotate(70deg);
+  }
+  60% {
+    transform: scale(0.9) rotate(30deg);
+  }
+  80% {
+    transform: scale(1) rotate(-10deg);
+  }
+  100% {
+    transform: scale(0.8) rotate(0deg);
+  }
+}
+
+@keyframes morph2 {
+  0% {
+    transform: scale(1) rotate(30deg);
+  }
+  20% {
+    transform: scale(0.7, 1) rotate(-40deg);
+  }
+  40% {
+    transform: scale(0.7, 1) rotate(160deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(-20deg);
+  }
+  80% {
+    transform: scale(1.1) rotate(-20deg);
+  }
+  100% {
+    transform: scale(1) rotate(30deg);
+  }
+}
+
+@keyframes morph3 {
+  0% {
+    transform: scale(0.9) rotate(70deg);
+  }
+  20% {
+    transform: scale(0.8, 1.1) rotate(140deg);
+  }
+  40% {
+    transform: scale(0.7, 1) rotate(180deg);
+  }
+  60% {
+    transform: scale(0.8) rotate(-10deg);
+  }
+  80% {
+    transform: scale(1) rotate(10deg);
+  }
+  100% {
+    transform: scale(0.9) rotate(70deg);
+  }
 }
