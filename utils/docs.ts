@@ -91,7 +91,9 @@ export async function getDoc(
 
     try {
       fileContents = await fs.readFile(indexPath, "utf-8");
-    } catch {}
+    } catch {
+      /* No doc */
+    }
   }
 
   const { data, content } = matter(fileContents);
@@ -161,43 +163,48 @@ async function constructDocTree(
   locale: string
 ) {
   const fullPath = joinDocsDirectory(locale, ...slugs);
-  const subDirs = await fs.readdir(fullPath);
 
-  for (const dir of subDirs) {
-    const target = join(fullPath, dir);
+  try {
+    const subDirs = await fs.readdir(fullPath);
 
-    const stats = await fs.stat(target);
-    if (stats.isFile()) {
-      if (dir === "index.md") {
-        const doc = await getDoc([...slugs, dir], ["title", "index"], locale);
+    for (const dir of subDirs) {
+      const subPath = join(fullPath, dir);
 
-        if (doc.title !== undefined) {
-          tree.title = doc.title as string;
+      const stats = await fs.stat(subPath);
+      if (stats.isFile()) {
+        if (dir === "index.md") {
+          const doc = await getDoc([...slugs, dir], ["title", "index"], locale);
+
+          if (doc.title !== undefined) {
+            tree.title = doc.title as string;
+          }
+          if (doc.index !== undefined) {
+            tree.index = doc.index as number;
+          }
+        } else if (dir.endsWith(".md")) {
+          const currentSlugs = [
+            ...slugs,
+            standardizeDocSlug(dir.replace(/\.md$/, "")),
+          ];
+          const doc = await getDoc([...slugs, dir], ["title", "index"], locale);
+          const leaf = createLeaf(currentSlugs, doc.title as string);
+
+          if (doc.index !== undefined) {
+            leaf.index = doc.index as number;
+          }
+
+          tree.children?.push(leaf);
         }
-        if (doc.index !== undefined) {
-          tree.index = doc.index as number;
-        }
-      } else if (dir.endsWith(".md")) {
-        const currentSlugs = [
-          ...slugs,
-          standardizeDocSlug(dir.replace(/\.md$/, "")),
-        ];
-        const doc = await getDoc([...slugs, dir], ["title", "index"], locale);
-        const leaf = createLeaf(currentSlugs, doc.title as string);
+      } else if (stats.isDirectory()) {
+        const currentSlugs = [...slugs, standardizeDocSlug(dir)];
 
-        if (doc.index !== undefined) {
-          leaf.index = doc.index as number;
-        }
-
-        tree.children?.push(leaf);
+        const node = createNode(currentSlugs);
+        tree.children?.push(node);
+        constructDocTree(currentSlugs, node, locale);
       }
-    } else if (stats.isDirectory()) {
-      const currentSlugs = [...slugs, standardizeDocSlug(dir)];
-
-      const node = createNode(currentSlugs);
-      tree.children?.push(node);
-      constructDocTree(currentSlugs, node, locale);
     }
+  } catch {
+    /* No dir */
   }
 }
 

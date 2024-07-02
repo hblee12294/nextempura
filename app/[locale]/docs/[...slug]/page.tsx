@@ -22,7 +22,7 @@ export default async function Doc({
     <main className={styles.page}>
       <article dangerouslySetInnerHTML={{ __html: content }}></article>
 
-      <div>hoc</div>
+      <div></div>
     </main>
   );
 }
