@@ -4,6 +4,5 @@
   display: grid;
   grid-template-columns: 1fr 300px;
 
-  @include max-width-page;
   @include min-fullscreen;
 }

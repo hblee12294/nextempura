@@ -6,11 +6,11 @@ export default async function Layout({
   params,
   children,
 }: {
-  params: { locale: string };
+  params: { locale: string; slug: string[] };
   children: React.ReactNode;
 }) {
   const locale = params.locale;
-  const docTree = await getDocTree(undefined, locale);
+  const docTree = await getDocTree(params.slug[0], locale);
 
   return (
     <div className={styles.layout}>

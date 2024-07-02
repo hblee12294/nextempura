@@ -83,7 +83,17 @@ export async function getDoc(
 
   const fullPath = joinDocsDirectory(locale, ...slugs) + ".md";
 
-  const fileContents = await fs.readFile(fullPath, "utf-8");
+  let fileContents = "";
+  try {
+    fileContents = await fs.readFile(fullPath, "utf-8");
+  } catch {
+    const indexPath = joinDocsDirectory(locale, ...slugs) + "/index.md";
+
+    try {
+      fileContents = await fs.readFile(indexPath, "utf-8");
+    } catch {}
+  }
+
   const { data, content } = matter(fileContents);
 
   const item: DocItem = {
