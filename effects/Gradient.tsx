@@ -25,41 +25,40 @@ export function Gradient() {
       "#c03671",
       "#643d7a",
       "#284671",
-      "#284671",
-      "#284671",
+      // "#284671",
+      // "#284671",
     ];
     const YELLOWS = ["#ef9f50", "#f2c061", "#f3bf61"];
     const LIGHT_BLUES = ["#b7cbef", "#e2eaf4", "#e2eaf4"];
     const DARK_BLUES = ["#3271ac", "#4282b6", "#7abcec"];
-    const backgroundColor = "#ffffff";
-    const width = window.innerWidth;
-    const height = window.innerHeight;
-    let frameCount = 0;
+
+    let width = stage.clientWidth;
+    let height = stage.clientHeight;
 
     let delta = 0;
     let delta1 = 0;
     let delta2 = 0;
     let delta3 = 0;
 
+    p5.disableFriendlyErrors = true;
+
     p5.setup = () => {
       p5.createCanvas(stage.clientWidth, stage.clientHeight, p5.WEBGL);
     };
 
     p5.draw = () => {
-      frameCount += 1;
-
-      let bg = p5.color(backgroundColor);
-      p5.background(bg);
-
       drawDarkBlues(DARK_BLUES, -width, -height * 0.7, p5.PI / 150, 4);
-      drawDarkBlues(DARK_BLUES, -width, -400, p5.PI / 20, 2);
+      // drawDarkBlues(DARK_BLUES, -width, -400, p5.PI / 20, 2);
       drawLightBlues(LIGHT_BLUES);
       drawYellows(YELLOWS);
       drawReds(REDS);
     };
 
     p5.windowResized = () => {
-      p5.resizeCanvas(stage.clientWidth, stage.clientHeight);
+      width = stage.clientWidth;
+      height = stage.clientHeight;
+
+      p5.resizeCanvas(width, height);
     };
 
     function drawDarkBlues(
@@ -78,7 +77,8 @@ export function Gradient() {
 
       p5.noStroke();
 
-      let size = 100;
+      const size = 100;
+      const waveSize = 15;
       let x = -(size / 2);
       let y = 0;
 
@@ -88,12 +88,11 @@ export function Gradient() {
         let j = 0;
 
         while (j < width * 2 + size / 2) {
-          let waveSize = 15;
-          let y0 = y + p5.sin(delta3 + j + x) * waveSize;
+          let y0 = y + Math.sin(delta3 + j + x) * waveSize;
 
           delta3 += 0.000008;
 
-          let y2 = y + size * 1.2 + p5.sin(delta3 + j + x) * waveSize;
+          let y2 = y + size * 1.2 + Math.sin(delta3 + j + x) * waveSize;
 
           if (j % 2 == 0) {
             p5.fill(colors[i]);
@@ -124,7 +123,8 @@ export function Gradient() {
 
       p5.noStroke();
 
-      let size = 100;
+      const size = 100;
+      const waveSize = 15;
       let x = -(size / 2);
       let y = 0;
 
@@ -134,14 +134,13 @@ export function Gradient() {
         let j = 0;
 
         while (j < width * 2 + size / 2) {
-          let waveSize = 15;
-          let y0 = y + p5.sin(delta2 + j + x) * waveSize;
-          y0 += p5.sin((delta2 + j + x) * 10) * 5;
+          let y0 = y + Math.sin(delta2 + j + x) * waveSize;
+          y0 += Math.sin((delta2 + j + x) * 10) * 5;
 
           delta2 += 0.00001;
 
-          let y2 = y + size * 1.2 + p5.sin(delta2 + j + x) * waveSize;
-          y2 += p5.sin((delta2 + j + x) * 10) * 5;
+          let y2 = y + size * 1.2 + Math.sin(delta2 + j + x) * waveSize;
+          y2 += Math.sin((delta2 + j + x) * 10) * 5;
 
           if (j % 2 == 0) {
             p5.fill(colors[i]);
@@ -172,7 +171,8 @@ export function Gradient() {
 
       p5.noStroke();
 
-      let size = 50;
+      const size = 50;
+      const waveSize = 10;
       let x = -(size / 2);
       let y = 0;
 
@@ -182,12 +182,11 @@ export function Gradient() {
         let j = 0;
 
         while (j < width * 2 + size / 2) {
-          let waveSize = 10;
-          let y0 = y + p5.sin(delta1 + j + x) * waveSize;
+          let y0 = y + Math.sin(delta1 + j + x) * waveSize;
 
           delta1 += 0.00001;
 
-          let y2 = y + size * 1.2 + p5.sin(delta1 + j + x) * waveSize;
+          let y2 = y + size * 1.2 + Math.sin(delta1 + j + x) * waveSize;
 
           if (j % 2 == 0) {
             p5.fill(colors[i]);
@@ -218,7 +217,8 @@ export function Gradient() {
 
       p5.noStroke();
 
-      let size = 100;
+      const size = 100;
+      const waveSize = 20;
       let x = -(size / 2);
       let y = 0;
 
@@ -228,17 +228,15 @@ export function Gradient() {
         let j = 0;
 
         while (j < width * 2 + size / 2) {
-          let waveSize = 20;
-
           let d = delta + j + x;
-          let y0 = y + p5.sin(d) * waveSize;
-          y0 += p5.sin(d * 10) * 10;
+          let y0 = y + Math.sin(d) * waveSize;
+          y0 += Math.sin(d * 10) * 10;
 
           delta += 0.000005;
 
           let d2 = delta + j + x;
-          let y2 = y + size * 1.2 + p5.sin(d2) * waveSize;
-          y2 += p5.sin(d2 * 10) * 10;
+          let y2 = y + size * 1.2 + Math.sin(d2) * waveSize;
+          y2 += Math.sin(d2 * 10) * 10;
 
           if (j % 2 == 0) {
             p5.fill(colors[i]);
