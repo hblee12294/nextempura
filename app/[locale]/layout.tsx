@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Noto_Sans_SC } from "next/font/google";
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import "@/styles/globals.scss";
 import { Header } from "@/components/Header";
@@ -29,6 +30,8 @@ export default function RootLayout({
         {children}
 
         <Footer></Footer>
+
+        <SpeedInsights />
       </body>
     </html>
   );
