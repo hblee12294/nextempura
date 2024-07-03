@@ -23,5 +23,10 @@
       "name": "Kabocha",
       "description": "Kabocha are Japanese pumpkin with a thin, typically dark green skin and orange flesh."
     }
+  },
+  "About": {
+    "title": "A biased Next.js documentation site template",
+    "intro": "Nextempura is built with Next.js, styled using SCSS and CSS variables, supports internationalization with next-intl, features markdown documentation through unified and remark, and supports dark theme.",
+    "use": "This template is not intended for out-of-box use; instead, it provides components that you can use to develop a custom template tailored to your preferences."
   }
 }

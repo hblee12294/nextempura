@@ -23,5 +23,10 @@
       "name": "Kabocha",
       "description": "Kabocha 是一种日本南瓜，皮薄，通常呈深绿色，果肉呈橙色。"
     }
+  },
+  "About": {
+    "title": "一个非常规的 Next.js 文档网站模板",
+    "intro": "Nextempura 使用 Next.js 构建，使用 SCSS 和 CSS 变量进行样式设计，使用 next-intl 支持国际化，通过 unified 和 remark 支持 markdown 文档，并且支持暗色主题。",
+    "use": "本模板并非用于开箱即用；相反，它提供了一些组件，您可以使用这些组件开发出符合您偏好的自定义模板。"
   }
 }

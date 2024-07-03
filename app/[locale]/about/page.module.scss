@@ -1,7 +1,93 @@
 @use "@/styles/mixins.scss" as *;
 
 .page {
-  @include min-fullscreen;
+  position: relative;
+  overflow: hidden;
+}
 
+.content {
   padding: 0 var(--page-padding-hrz);
 }
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+}
+
+.title {
+  font-size: var(--font-size-about-title);
+}
+
+.introSection {
+  margin: 0 0 0 20%;
+  min-height: 40vh;
+}
+
+.intro {
+  max-width: 420px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.useSection {
+  margin: 0 20% 0 0;
+  min-height: 40vh;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.use {
+  max-width: 420px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.blob1 {
+  position: absolute;
+  top: 10vh;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  background-color: #3271ac;
+  border-radius: 26% 74% 59% 41% / 59% 64% 36% 41%;
+  transform: translate(-20%);
+  z-index: -1;
+}
+
+.blob2 {
+  position: absolute;
+  top: 35vh;
+  right: 0;
+  width: 700px;
+  height: 700px;
+  background-color: #e45064;
+  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+  transform: translate(20%);
+  z-index: -1;
+}
+
+.blob3 {
+  position: absolute;
+  bottom: 0;
+  left: 35vw;
+  width: 600px;
+  height: 600px;
+  background-color: #ef9f50;
+  border-radius: 75% 25% 25% 75% / 45% 61% 39% 55%;
+  transform: translate(-50%);
+  z-index: -1;
+}
+
+// @keyframes move {
+//   from {
+//     border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+//   }
+
+//   to {
+//     border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
+//   }
+// }
