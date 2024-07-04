@@ -12,17 +12,21 @@ export default function About() {
       <div className={styles.blob3}></div>
 
       <main className={styles.content}>
-        <div className={styles.titleSection}>
+        <section className={styles.titleSection}>
           <h1 className={styles.title}>{t("title")}</h1>
-        </div>
+        </section>
 
-        <div className={styles.introSection}>
+        <section className={styles.introSection}>
           <p className={styles.intro}>{t("intro")}</p>
-        </div>
+        </section>
 
-        <div className={styles.useSection}>
+        <section className={styles.useSection}>
           <p className={styles.use}>{t("use")}</p>
-        </div>
+        </section>
+
+        <section className={styles.endingSection}>
+          <p className={styles.ending}>{t("ending")}</p>
+        </section>
       </main>
     </div>
   );

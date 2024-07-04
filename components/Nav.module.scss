@@ -1,7 +1,7 @@
 @use "@/styles/mixins.scss" as *;
 
-$nav-link-top-bar-hex: #3674ae;
-$nav-link-bottom-bar-hex: #e45064;
+$nav-link-top-bar-hex: var(--accent-blue-hex);
+$nav-link-bottom-bar-hex: var(--accent-red-hex);
 $nav-link-border-raduis: 2px;
 $nav-link-bar-height: 4px;
 $nav-link-bar-width: 1rem;
