@@ -25,7 +25,7 @@
     }
   },
   "About": {
-    "title": "一个非常规的 Next.js 文档网站模板",
+    "title": "一个非常规 Next.js 文档网站模板",
     "intro": "Nextempura 使用 Next.js 构建，使用 SCSS 和 CSS 变量进行样式设计，使用 next-intl 支持国际化，通过 unified 和 remark 支持 markdown 文档，并且支持明暗色主题切换。",
     "use": "本模板并非用于开箱即用；相反，它提供了一些组件，您可以使用这些组件开发出符合您偏好的自定义模板。",
     "ending": "充分发挥想象力, 文档也可以变得变得易读又好看。"
