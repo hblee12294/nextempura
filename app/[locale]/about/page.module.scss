@@ -94,7 +94,7 @@
   width: 500px;
   height: 500px;
   background-color: var(--accent-blue-hex);
-  border-radius: 26% 74% 59% 41% / 59% 64% 36% 41%;
+  border-radius: var(--blob-1);
   // transform: translate(-20%);
   z-index: -1;
 
@@ -115,7 +115,7 @@
   width: 700px;
   height: 700px;
   background-color: var(--accent-red-hex);
-  border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
+  border-radius: var(--blob-2);
   // transform: translate(20%);
   z-index: -1;
 
@@ -137,7 +137,7 @@
   width: 600px;
   height: 600px;
   background-color: var(--accent-yellow-hex);
-  border-radius: 75% 25% 25% 75% / 45% 61% 39% 55%;
+  border-radius: var(--blob-3);
   transform: translate(-50%);
   z-index: -1;
 

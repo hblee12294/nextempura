@@ -4,7 +4,6 @@ import cn from "classnames";
 import styles from "./page.module.scss";
 import { PRODUCTS } from "@/configs/products";
 import { Link } from "@/navigation";
-import BlobIcon from "@/svgs/blob.svg";
 
 export default function Docs() {
   const t = useTranslations("Products");
@@ -17,12 +16,12 @@ export default function Docs() {
             <li key={id} className={styles.productBlock}>
               <Link href={`/docs/${docPath}`}>
                 <div className={styles.coverImage}>
-                  <BlobIcon
+                  <div
                     className={cn(
                       styles.icon,
-                      styles[`morph${(index % 3) + 1}`]
+                      styles[`blob${(index % 3) + 1}`]
                     )}
-                  ></BlobIcon>
+                  ></div>
                 </div>
                 <h3 className={styles.productTitle}>{t(`${id}.name`)}</h3>
                 <p className={styles.productDesc}>{t(`${id}.description`)}</p>

@@ -1,3 +1,4 @@
+@use "sass:list";
 @use "@/styles/mixins.scss" as *;
 
 $morph-duration: 20s;
@@ -54,7 +55,7 @@ $morph-duration: 20s;
     }
   }
 
-  padding: 1.5rem;
+  padding: 15%;
   border-radius: var(--border-radius-card);
   overflow: hidden;
   transition: background-color var(--duration);
@@ -76,18 +77,21 @@ $morph-duration: 20s;
   transform-origin: 50% 50%;
 }
 
-.morph1 {
-  fill: #e45064;
+.blob1 {
+  background-color: var(--accent-red-hex);
+  border-radius: var(--blob-4);
   animation: morph1 $morph-duration ease-in-out infinite;
 }
 
-.morph2 {
-  fill: #3271ac;
+.blob2 {
+  background-color: var(--accent-blue-hex);
+  border-radius: var(--blob-5);
   animation: morph2 $morph-duration ease-in-out infinite;
 }
 
-.morph3 {
-  fill: #ef9f50;
+.blob3 {
+  background-color: var(--accent-yellow-hex);
+  border-radius: var(--blob-6);
   animation: morph3 $morph-duration ease-in-out infinite;
 }
 
@@ -96,60 +100,60 @@ $morph-duration: 20s;
     transform: scale(0.8) rotate(0deg);
   }
   20% {
-    transform: scale(0.8, 1) rotate(160deg);
+    transform: scale(0.8, 1) rotate(72deg);
   }
   40% {
-    transform: scale(1, 1.1) rotate(70deg);
+    transform: scale(1, 1.1) rotate(144deg);
   }
   60% {
-    transform: scale(0.9) rotate(30deg);
+    transform: scale(0.9) rotate(216deg);
   }
   80% {
-    transform: scale(1) rotate(-10deg);
+    transform: scale(1) rotate(288deg);
   }
   100% {
-    transform: scale(0.8) rotate(0deg);
+    transform: scale(0.8) rotate(360deg);
   }
 }
 
 @keyframes morph2 {
   0% {
-    transform: scale(1) rotate(30deg);
+    transform: scale(1) rotate(0deg);
   }
   20% {
-    transform: scale(0.7, 1) rotate(-40deg);
+    transform: scale(0.7, 1) rotate(72deg);
   }
   40% {
-    transform: scale(0.7, 1) rotate(160deg);
+    transform: scale(0.7, 1) rotate(144deg);
   }
   60% {
-    transform: scale(1.1) rotate(-20deg);
+    transform: scale(1.1) rotate(216deg);
   }
   80% {
-    transform: scale(1.1) rotate(-20deg);
+    transform: scale(1.1) rotate(288deg);
   }
   100% {
-    transform: scale(1) rotate(30deg);
+    transform: scale(1) rotate(360deg);
   }
 }
 
 @keyframes morph3 {
   0% {
-    transform: scale(0.9) rotate(70deg);
+    transform: scale(0.9) rotate(0deg);
   }
   20% {
-    transform: scale(0.8, 1.1) rotate(140deg);
+    transform: scale(0.8, 1.1) rotate(72deg);
   }
   40% {
-    transform: scale(0.7, 1) rotate(180deg);
+    transform: scale(0.7, 1) rotate(144deg);
   }
   60% {
-    transform: scale(0.8) rotate(-10deg);
+    transform: scale(0.8) rotate(216deg);
   }
   80% {
-    transform: scale(1) rotate(10deg);
+    transform: scale(1) rotate(288deg);
   }
   100% {
-    transform: scale(0.9) rotate(70deg);
+    transform: scale(0.9) rotate(360deg);
   }
 }
