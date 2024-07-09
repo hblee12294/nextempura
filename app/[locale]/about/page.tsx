@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useTranslations } from "next-intl";
 
 import styles from "./page.module.scss";
@@ -25,7 +26,13 @@ export default function About() {
         </section>
 
         <section className={styles.endingSection}>
-          <p className={styles.ending}>{t("ending")}</p>
+          <p className={styles.ending}>
+            {t.rich("ending", {
+              a: (chunks: any) => (
+                <Link href="mailto:hblee12294@gmail.com">{chunks}</Link>
+              ),
+            })}
+          </p>
         </section>
       </main>
     </div>
