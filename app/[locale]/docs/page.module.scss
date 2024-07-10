@@ -81,38 +81,43 @@ $morph-duration: 20s;
   background-color: var(--accent-red-hex);
   border-radius: var(--blob-4);
   animation: morph1 $morph-duration ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
 }
 
 .blob2 {
   background-color: var(--accent-blue-hex);
   border-radius: var(--blob-5);
   animation: morph2 $morph-duration ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
 }
 
 .blob3 {
   background-color: var(--accent-yellow-hex);
   border-radius: var(--blob-6);
   animation: morph3 $morph-duration ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
 }
 
 @keyframes morph1 {
   0% {
-    transform: scale(0.8) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
-  20% {
-    transform: scale(0.8, 1) rotate(72deg);
+
+  50% {
+    transform: scale(0.9) rotate(180deg);
   }
-  40% {
-    transform: scale(1, 1.1) rotate(144deg);
-  }
-  60% {
-    transform: scale(0.9) rotate(216deg);
-  }
-  80% {
-    transform: scale(1) rotate(288deg);
-  }
+
   100% {
-    transform: scale(0.8) rotate(360deg);
+    transform: scale(1) rotate(360deg);
   }
 }
 
@@ -120,18 +125,11 @@ $morph-duration: 20s;
   0% {
     transform: scale(1) rotate(0deg);
   }
-  20% {
-    transform: scale(0.7, 1) rotate(72deg);
+
+  50% {
+    transform: scale(1.1) rotate(180deg);
   }
-  40% {
-    transform: scale(0.7, 1) rotate(144deg);
-  }
-  60% {
-    transform: scale(1.1) rotate(216deg);
-  }
-  80% {
-    transform: scale(1.1) rotate(288deg);
-  }
+
   100% {
     transform: scale(1) rotate(360deg);
   }
@@ -139,21 +137,14 @@ $morph-duration: 20s;
 
 @keyframes morph3 {
   0% {
-    transform: scale(0.9) rotate(0deg);
+    transform: scale(1) rotate(0deg);
   }
-  20% {
-    transform: scale(0.8, 1.1) rotate(72deg);
+
+  50% {
+    transform: scale(0.95, 1.05) rotate(180deg);
   }
-  40% {
-    transform: scale(0.7, 1) rotate(144deg);
-  }
-  60% {
-    transform: scale(0.8) rotate(216deg);
-  }
-  80% {
-    transform: scale(1) rotate(288deg);
-  }
+
   100% {
-    transform: scale(0.9) rotate(360deg);
+    transform: scale(1) rotate(360deg);
   }
 }

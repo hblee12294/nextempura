@@ -1,12 +1,14 @@
 @use "@/styles/mixins.scss" as *;
 
+$morph-duration: 50s;
+
 .page {
   position: relative;
   overflow: hidden;
 }
 
 .content {
-  padding: 0 var(--page-padding-hrz);
+  padding: 0 var(--page-padding-hrz) 5rem;
 }
 
 .titleSection {
@@ -95,8 +97,8 @@
   height: 500px;
   background-color: var(--accent-blue-hex);
   border-radius: var(--blob-1);
-  // transform: translate(-20%);
   z-index: -1;
+  animation: morph1 $morph-duration linear infinite;
 
   @include device("m") {
     width: 400px;
@@ -105,6 +107,10 @@
   @include device("s") {
     width: 300px;
     height: 300px;
+  }
+
+  @include reduced-motion {
+    animation: none;
   }
 }
 
@@ -116,8 +122,8 @@
   height: 700px;
   background-color: var(--accent-red-hex);
   border-radius: var(--blob-2);
-  // transform: translate(20%);
   z-index: -1;
+  animation: morph2 $morph-duration linear infinite;
 
   @include device("m") {
     width: 600px;
@@ -128,18 +134,22 @@
     width: 400px;
     height: 400px;
   }
+
+  @include reduced-motion {
+    animation: none;
+  }
 }
 
 .blob3 {
   position: absolute;
-  bottom: 0;
-  left: 35vw;
+  bottom: 2%;
+  left: 16vw;
   width: 600px;
   height: 600px;
   background-color: var(--accent-yellow-hex);
   border-radius: var(--blob-3);
-  transform: translate(-50%);
   z-index: -1;
+  animation: morph3 $morph-duration linear infinite;
 
   @include device("m") {
     width: 500px;
@@ -149,14 +159,86 @@
     width: 400px;
     height: 400px;
   }
+
+  @include reduced-motion {
+    animation: none;
+  }
 }
 
-// @keyframes move {
-//   from {
-//     border-radius: 24% 76% 35% 65% / 27% 36% 64% 73%;
-//   }
+@keyframes morph1 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
 
-//   to {
-//     border-radius: 76% 24% 33% 67% / 68% 55% 45% 32%;
-//   }
-// }
+  20% {
+    transform: translate(20%, -10%) rotate(72deg);
+  }
+
+  40% {
+    transform: translate(40%, 0) rotate(144deg);
+  }
+
+  60% {
+    transform: translate(25%, 12%) rotate(216deg);
+  }
+
+  80% {
+    transform: translate(14%, 6%) rotate(288deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes morph2 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  20% {
+    transform: translate(-10%, 8%) rotate(72deg);
+  }
+
+  40% {
+    transform: translate(-30%, 5%) rotate(144deg);
+  }
+
+  60% {
+    transform: translate(-17%, 0) rotate(216deg);
+  }
+
+  80% {
+    transform: translate(-8%, 5%) rotate(288deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
+
+@keyframes morph3 {
+  0% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+
+  20% {
+    transform: translate(-8%, -12%) rotate(72deg);
+  }
+
+  40% {
+    transform: translate(-4%, -20%) rotate(144deg);
+  }
+
+  60% {
+    transform: translate(7%, -11%) rotate(216deg);
+  }
+
+  80% {
+    transform: translate(5%, -8%) rotate(288deg);
+  }
+
+  100% {
+    transform: translate(0, 0) rotate(360deg);
+  }
+}
