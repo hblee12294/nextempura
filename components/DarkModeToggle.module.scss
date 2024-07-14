@@ -1,0 +1,38 @@
+@use "@/styles/mixins.scss" as *;
+
+$icon-size: 20px;
+
+.select {
+  opacity: 0;
+}
+
+.icon {
+  width: $icon-size;
+  height: $icon-size;
+  fill: rgba(var(--font-color-inactive-rgb));
+  transition: var(--duration);
+}
+
+.triggerButton {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  padding: 0.2rem;
+  cursor: pointer;
+  font-size: 0;
+
+  @include hoverable {
+    &:hover .icon {
+      fill: rgb(var(--font-color-hover-rgb));
+    }
+  }
+}
+
+.triggerPlaceholder {
+  display: inline-block;
+  background-color: transparent;
+  border: none;
+  padding: 0.2rem;
+  width: $icon-size;
+  height: $icon-size;
+}

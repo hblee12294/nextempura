@@ -3,8 +3,9 @@
 :root {
   --max-page-width: 1536px;
 
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono",
-    "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
+    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
+    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
   --font-size: 16px;
   --font-size-logo: 22px;
   --font-size-footer: 14px;
@@ -27,8 +28,12 @@
   --border-radius-card: 16px;
   --duration: 0.2s;
 
-  --header-height: calc(var(--font-size-logo) * 1.5 + var(--page-padding-vrt) * 2);
-  --footer-height: calc(var(--font-size-footer) * 1.5 + var(--page-padding-vrt) * 2);
+  --header-height: calc(
+    var(--font-size-logo) * 1.5 + var(--page-padding-vrt) * 2
+  );
+  --footer-height: calc(
+    var(--font-size-footer) * 1.5 + var(--page-padding-vrt) * 2
+  );
 
   --accent-blue-hex: #3271ac;
   --accent-red-hex: #e45064;
@@ -51,21 +56,15 @@
   --blob-6: 66% 34% 37% 63% / 57% 31% 69% 43%;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --font-color-rgb: 255, 255, 255;
-    --font-color-weak-rgb: 105, 105, 105;
-    --font-color-inactive-rgb: 155, 155, 155;
-    --font-color-hover-rgb: 205, 205, 205;
-    --font-color-minor-rgb: 175, 175, 175;
-    --background-rgb: 10, 10, 10;
-    --placeholder-rgb: 20, 20, 20;
-    --placeholder-2-rgb: 40, 40, 40;
-  }
-
-  html {
-    color-scheme: dark;
-  }
+:root[data-theme="dark"] {
+  --font-color-rgb: 255, 255, 255;
+  --font-color-weak-rgb: 105, 105, 105;
+  --font-color-inactive-rgb: 155, 155, 155;
+  --font-color-hover-rgb: 205, 205, 205;
+  --font-color-minor-rgb: 175, 175, 175;
+  --background-rgb: 10, 10, 10;
+  --placeholder-rgb: 20, 20, 20;
+  --placeholder-2-rgb: 40, 40, 40;
 }
 
 * {

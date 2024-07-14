@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_SC } from "next/font/google";
-import { SpeedInsights } from '@vercel/speed-insights/next';
+import { SpeedInsights } from "@vercel/speed-insights/next";
+import { ThemeProvider } from "next-themes";
 
 import "@/styles/globals.scss";
 import { Header } from "@/components/Header";
@@ -23,15 +24,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang={params.locale || DEFAULT_LOCALE}>
+    <html lang={params.locale || DEFAULT_LOCALE} suppressHydrationWarning>
       <body className={font.className}>
-        <Header></Header>
+        <ThemeProvider>
+          <Header></Header>
 
-        {children}
+          {children}
 
-        <Footer></Footer>
+          <Footer></Footer>
 
-        <SpeedInsights />
+          <SpeedInsights />
+        </ThemeProvider>
       </body>
     </html>
   );

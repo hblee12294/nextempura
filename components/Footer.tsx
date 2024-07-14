@@ -4,10 +4,11 @@ import {
   NextIntlClientProvider,
   useMessages,
 } from "next-intl";
-import { LocaleSwitch } from "@/components/LocaleSwitch";
 import pick from "lodash/pick";
 
 import styles from "./Footer.module.scss";
+import { LocaleSwitch } from "@/components/LocaleSwitch";
+import { DarkModeToggle } from "@/components/DarkModeToggle";
 
 export function Footer() {
   const messages = useMessages();
@@ -30,10 +31,14 @@ export function Footer() {
         })}
       </div>
 
-      <div className={styles.locale}>
-        <NextIntlClientProvider messages={pick(messages, "Locale")}>
-          <LocaleSwitch></LocaleSwitch>
-        </NextIntlClientProvider>
+      <div className={styles.settings}>
+        <div className={styles.locale}>
+          <NextIntlClientProvider messages={pick(messages, "Locale")}>
+            <LocaleSwitch></LocaleSwitch>
+          </NextIntlClientProvider>
+        </div>
+
+        <DarkModeToggle></DarkModeToggle>
       </div>
     </footer>
   );
