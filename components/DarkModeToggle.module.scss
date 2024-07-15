@@ -1,6 +1,6 @@
 @use "@/styles/mixins.scss" as *;
 
-$icon-size: 20px;
+$icon-size: calc(var(--font-size-footer) * 1.5 - 2px);
 
 .select {
   opacity: 0;
@@ -14,10 +14,9 @@ $icon-size: 20px;
 }
 
 .triggerButton {
-  display: inline-block;
   background-color: transparent;
   border: none;
-  padding: 0.2rem;
+  padding: 1px;
   cursor: pointer;
   font-size: 0;
 
@@ -32,7 +31,6 @@ $icon-size: 20px;
   display: inline-block;
   background-color: transparent;
   border: none;
-  padding: 0.2rem;
   width: $icon-size;
   height: $icon-size;
 }
