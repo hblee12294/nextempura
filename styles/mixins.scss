@@ -1,4 +1,5 @@
 @mixin max-width-page {
+    box-sizing: border-box;
     max-width: var(--max-page-width);
     margin: 0 auto;
 }
