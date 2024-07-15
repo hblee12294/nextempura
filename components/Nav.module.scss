@@ -25,6 +25,7 @@ $nav-link-bar-end-tx: 0%;
 .navLink {
   position: relative;
   display: inline-block;
+  color: rgb(var(--font-color-inactive-rgb));
   font-size: var(--font-size-nav);
   font-weight: 500;
 
@@ -57,6 +58,8 @@ $nav-link-bar-end-tx: 0%;
   }
 
   &Active {
+    color: rgb(var(--font-color-rgb)) !important;
+
     &::before {
       background-color: $nav-link-bottom-bar-hex;
       transform: translate(-$nav-link-bar-end-tx, 100%);
@@ -72,15 +75,19 @@ $nav-link-bar-end-tx: 0%;
 }
 
 @include hoverable {
-  .navLink:hover {
-    &::before {
-      background-color: $nav-link-bottom-bar-hex;
-      transform: translate(-$nav-link-bar-end-tx, 100%);
-    }
+  .navLink {
+    &:hover {
+      color: rgb(var(--font-color-hover-rgb));
 
-    &::after {
-      background-color: $nav-link-top-bar-hex;
-      transform: translate($nav-link-bar-end-tx, -50%);
+      &::before {
+        background-color: $nav-link-bottom-bar-hex;
+        transform: translate(-$nav-link-bar-end-tx, 100%);
+      }
+
+      &::after {
+        background-color: $nav-link-top-bar-hex;
+        transform: translate($nav-link-bar-end-tx, -50%);
+      }
     }
   }
 }

@@ -9,11 +9,11 @@ export interface NavItemWithName extends NavItem {
 
 export const NAV_ITEMS: NavItem[] = [
   {
-    id: "docs",
-    path: "/docs",
-  },
-  {
     id: "about",
     path: "/about",
+  },
+  {
+    id: "docs",
+    path: "/docs",
   },
 ];
