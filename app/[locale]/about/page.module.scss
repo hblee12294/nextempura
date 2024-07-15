@@ -1,6 +1,8 @@
 @use "@/styles/mixins.scss" as *;
 
-$morph-duration: 50s;
+$morph-duration-1: 80s;
+$morph-duration-2: 60s;
+$morph-duration-3: 90s;
 
 .page {
   position: relative;
@@ -98,7 +100,7 @@ $morph-duration: 50s;
   background-color: var(--accent-blue-hex);
   border-radius: var(--blob-1);
   z-index: -1;
-  animation: morph1 $morph-duration linear infinite;
+  animation: morph1 $morph-duration-1 linear infinite;
 
   @include device("m") {
     width: 400px;
@@ -123,7 +125,7 @@ $morph-duration: 50s;
   background-color: var(--accent-red-hex);
   border-radius: var(--blob-2);
   z-index: -1;
-  animation: morph2 $morph-duration linear infinite;
+  animation: morph2 $morph-duration-2 linear infinite;
 
   @include device("m") {
     width: 600px;
@@ -149,7 +151,7 @@ $morph-duration: 50s;
   background-color: var(--accent-yellow-hex);
   border-radius: var(--blob-3);
   z-index: -1;
-  animation: morph3 $morph-duration linear infinite;
+  animation: morph3 $morph-duration-3 linear infinite;
 
   @include device("m") {
     width: 500px;
