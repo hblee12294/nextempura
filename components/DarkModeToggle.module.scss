@@ -28,9 +28,7 @@ $icon-size: calc(var(--font-size-footer) * 1.5 - 2px);
 }
 
 .triggerPlaceholder {
-  display: inline-block;
-  background-color: transparent;
-  border: none;
-  width: $icon-size;
-  height: $icon-size;
+  @extend .icon;
+
+  padding: 1px;
 }
