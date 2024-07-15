@@ -52,13 +52,13 @@ $morph-duration: 20s;
   @include hoverable {
     .productBlock:hover & {
       background-color: rgb(var(--placeholder-2-rgb));
+      transition: background-color var(--duration);
     }
   }
 
   padding: 15%;
   border-radius: var(--border-radius-card);
   overflow: hidden;
-  transition: background-color var(--duration);
 }
 
 .productTitle {
