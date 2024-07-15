@@ -9,22 +9,10 @@ $icon-size: calc(var(--font-size-footer) * 1.5 - 2px);
 .icon {
   width: $icon-size;
   height: $icon-size;
-  fill: rgba(var(--font-color-inactive-rgb));
-  transition: var(--duration);
 }
 
 .triggerButton {
-  background-color: transparent;
-  border: none;
   padding: 1px;
-  cursor: pointer;
-  font-size: 0;
-
-  @include hoverable {
-    &:hover .icon {
-      fill: rgb(var(--font-color-hover-rgb));
-    }
-  }
 }
 
 .triggerPlaceholder {

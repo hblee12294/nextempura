@@ -6,7 +6,8 @@
   position: sticky;
   top: 0;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr auto auto;
+  gap: 2rem;
   padding: var(--page-padding-vrt) var(--page-padding-hrz);
   z-index: 1;
 }
@@ -19,4 +20,13 @@
   display: inline-block;
   font-size: var(--font-size-logo);
   font-weight: bold;
+}
+
+.links {
+  display: grid;
+  align-items: center;
+}
+
+.icon {
+  height: var(--font-size-logo);
 }

@@ -1,10 +1,11 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import { useState, useEffect, Suspense } from "react";
+import { useState, useEffect } from "react";
 
 import styles from "./DarkModeToggle.module.scss";
 import { Select } from "@/components/Select";
+import { IconButton } from "@/components/IconButton";
 
 import IconLightbulb from "@/svgs/lightbulb.svg";
 import IconLight from "@/svgs/light.svg";
@@ -44,7 +45,9 @@ export function DarkModeToggle() {
   return (
     <Select
       trigger={
-        <button className={styles.triggerButton}>{renderIcon(theme)}</button>
+        <IconButton className={styles.triggerButton}>
+          {renderIcon(theme)}
+        </IconButton>
       }
       options={[
         {

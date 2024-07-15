@@ -2,8 +2,10 @@ import { useTranslations } from "next-intl";
 
 import styles from "./Header.module.scss";
 import { Nav } from "@/components/Nav";
+import { IconButton } from "@/components/IconButton";
 import { Link } from "@/navigation";
 import { NAV_ITEMS } from "@/configs/navs";
+import IconGitHub from "@/svgs/github.svg";
 
 export function Header() {
   const t = useTranslations("Header");
@@ -22,6 +24,12 @@ export function Header() {
           name: t(navItem.id),
         }))}
       ></Nav>
+
+      <div className={styles.links}>
+        <IconButton>
+          <IconGitHub className={styles.icon}></IconGitHub>
+        </IconButton>
+      </div>
     </header>
   );
 }
