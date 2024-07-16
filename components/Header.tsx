@@ -29,6 +29,7 @@ export function Header() {
         <IconLink
           href="https://github.com/hblee12294/nextempura"
           target="_blank"
+          className={styles.link}
         >
           <IconGitHub className={styles.icon}></IconGitHub>
         </IconLink>

@@ -19,7 +19,7 @@ export const IconButton = forwardRef(
 
     return (
       <button
-        className={cn(className, styles.button)}
+        className={cn(styles.button, className)}
         ref={ref}
         {...otherProps}
       >

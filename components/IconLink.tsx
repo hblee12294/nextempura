@@ -4,13 +4,13 @@ import cn from "classnames";
 import styles from "./IconLink.module.scss";
 import { Link } from "@/navigation";
 
-type IconLinkProps = ComponentProps<typeof Link>;
+export type IconLinkProps = ComponentProps<typeof Link>;
 
 export function IconLink(props: IconLinkProps) {
   const { className, children, ref, ...otherProps } = props;
 
   return (
-    <Link className={cn(className, styles.link)} ref={ref} {...otherProps}>
+    <Link className={cn(styles.link, className)} ref={ref} {...otherProps}>
       {children}
     </Link>
   );
