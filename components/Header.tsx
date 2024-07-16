@@ -2,8 +2,8 @@ import { useTranslations } from "next-intl";
 
 import styles from "./Header.module.scss";
 import { Nav } from "@/components/Nav";
-import { IconButton } from "@/components/IconButton";
 import { Link } from "@/navigation";
+import { IconLink } from "@/components/IconLink";
 import { NAV_ITEMS } from "@/configs/navs";
 import IconGitHub from "@/svgs/github.svg";
 
@@ -26,9 +26,12 @@ export function Header() {
       ></Nav>
 
       <div className={styles.links}>
-        <IconButton>
+        <IconLink
+          href="https://github.com/hblee12294/nextempura"
+          target="_blank"
+        >
           <IconGitHub className={styles.icon}></IconGitHub>
-        </IconButton>
+        </IconLink>
       </div>
     </header>
   );

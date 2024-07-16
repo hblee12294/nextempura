@@ -1,0 +1,17 @@
+@use "@/styles/mixins.scss" as *;
+
+.link {
+  cursor: pointer;
+  font-size: 0;
+
+  svg {
+    fill: rgba(var(--font-color-rgb));
+    transition: var(--duration);
+  }
+
+  @include hoverable {
+    &:hover svg {
+      fill: rgb(var(--font-color-hover-rgb));
+    }
+  }
+}
