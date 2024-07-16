@@ -7,7 +7,7 @@ import styles from "./DarkModeToggle.module.scss";
 import { Select } from "@/components/Select";
 import { IconButton } from "@/components/IconButton";
 
-import IconLightbulb from "@/svgs/lightbulb.svg";
+import IconSystem from "@/svgs/circle-half-full.svg";
 import IconLight from "@/svgs/light.svg";
 import IconDark from "@/svgs/dark.svg";
 
@@ -32,7 +32,7 @@ export function DarkModeToggle() {
   const renderIcon = (value?: string) => {
     switch (value) {
       case "system":
-        return <IconLightbulb className={styles.icon}></IconLightbulb>;
+        return <IconSystem className={styles.icon}></IconSystem>;
       case "light":
         return <IconLight className={styles.icon}></IconLight>;
       case "dark":
