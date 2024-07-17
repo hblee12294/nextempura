@@ -17,9 +17,9 @@ const intlMiddleware = createMiddleware({
 export default function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Detect if pathname contains external URLs
-  const externalURL = new RegExp(/(\.|%5C|http)/i).test(pathname);
-  if (externalURL) return;
+  // Detect if pathname contains encoded backslash
+  const maliciousURL = new RegExp(/(%5C|%5c)/i).test(pathname);
+  if (maliciousURL) return;
 
   return intlMiddleware(request);
 }
