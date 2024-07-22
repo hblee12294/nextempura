@@ -26,7 +26,7 @@ export const IconButton = forwardRef(
         {children}
       </button>
     );
-  }
+  },
 );
 
 IconButton.displayName = "IconButton";

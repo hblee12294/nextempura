@@ -14,7 +14,7 @@ export default async function Doc({
   const doc = await getDoc(
     slug,
     ["title", "date", "slugs", "content", "ogImage", "coverImage"],
-    locale
+    locale,
   );
   const content = await markdownToHTML((doc.content as string) || "");
 

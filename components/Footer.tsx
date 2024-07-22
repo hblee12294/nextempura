@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import Link from "next/link";
 import {
   useTranslations,
@@ -19,7 +20,7 @@ export function Footer() {
     <footer className={styles.container}>
       <div className={styles.credit}>
         {t.rich("craftedBy", {
-          a: (chunks: any) => (
+          a: (chunks: ReactNode) => (
             <Link
               href="https://hongbinli.com"
               target="_blank"

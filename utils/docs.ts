@@ -51,7 +51,7 @@ export async function traverseDirectory(
     isDir: boolean;
     fullPath: string;
   }) => void,
-  locale = ""
+  locale = "",
 ) {
   const stack: string[][] = [[rootPath]];
 
@@ -77,7 +77,7 @@ export async function traverseDirectory(
 export async function getDoc(
   slugs: string[],
   fields: string[] = [],
-  locale = ""
+  locale = "",
 ) {
   slugs[slugs.length - 1] = slugs[slugs.length - 1].replace(/\.md$/, "");
 
@@ -118,7 +118,7 @@ export async function getDoc(
 
 export async function getAllDocs(
   fields: string[] = [],
-  locales: string[] = []
+  locales: string[] = [],
 ) {
   const docs: DocItem[] = [];
 
@@ -160,7 +160,7 @@ function createLeaf(slugs: string[], title?: string): DocTreeNode {
 async function constructDocTree(
   slugs: string[],
   tree: DocTreeNode,
-  locale: string
+  locale: string,
 ) {
   const fullPath = joinDocsDirectory(locale, ...slugs);
 

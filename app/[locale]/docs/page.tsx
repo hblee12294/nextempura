@@ -19,7 +19,7 @@ export default function Docs() {
                   <div
                     className={cn(
                       styles.icon,
-                      styles[`blob${(index % 3) + 1}`]
+                      styles[`blob${(index % 3) + 1}`],
                     )}
                   ></div>
                 </div>

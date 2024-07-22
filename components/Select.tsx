@@ -24,8 +24,8 @@ const menuClassName = ({ state }: { state: string }) =>
   state === "opening"
     ? styles.menuOpening
     : state === "closing"
-    ? styles.menuClosing
-    : styles.menu;
+      ? styles.menuClosing
+      : styles.menu;
 
 const menuItemClassName = ({
   hover,
@@ -37,8 +37,8 @@ const menuItemClassName = ({
   disabled
     ? styles.menuItemDisabled
     : hover
-    ? styles.menuItemHover
-    : styles.menuItem;
+      ? styles.menuItemHover
+      : styles.menuItem;
 
 const MenuItem = (props: MenuItemProps) => (
   <MenuItemInner {...props} className={menuItemClassName} />
