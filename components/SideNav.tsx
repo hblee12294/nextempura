@@ -6,7 +6,10 @@ import styles from "./SideNav.module.scss";
 function Node({ node, path }: { node: DocTreeNode; path: string }) {
   return (
     <li>
-      <div>{standardizeDocName(node.title)}</div>
+      <div>
+        <Link href={`/docs/${path}`}>{standardizeDocName(node.title)}</Link>
+      </div>
+
       <ul>{renderDocTree(node.children)}</ul>
     </li>
   );
@@ -42,9 +45,7 @@ function renderDocTree(tree?: DocTreeNode[]) {
 
     if (node.children) {
       return <Node key={path} node={node} path={path}></Node>;
-    }
-
-    if (!node.children) {
+    } else {
       return <Leaf key={path} node={node} path={path}></Leaf>;
     }
   });

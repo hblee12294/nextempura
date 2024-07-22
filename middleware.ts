@@ -1,4 +1,3 @@
-import { NextRequest } from "next/server";
 import createMiddleware from "next-intl/middleware";
 
 import { LOCALES, DEFAULT_LOCALE, LOCALE_PREFIX } from "@/configs/locales";

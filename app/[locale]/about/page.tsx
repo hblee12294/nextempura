@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
@@ -28,7 +29,7 @@ export default function About() {
         <section className={styles.endingSection}>
           <p className={styles.ending}>
             {t.rich("ending", {
-              a: (chunks: any) => (
+              a: (chunks: ReactNode) => (
                 <Link href="mailto:hblee12294@gmail.com">{chunks}</Link>
               ),
             })}
