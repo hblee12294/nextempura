@@ -3,6 +3,13 @@ import { join } from "path";
 import matter from "gray-matter";
 
 import { DOCS_PATH } from "@/configs/docs";
+import {
+  type DocTreeNode,
+  standardizeDocName,
+  standardizeDocSlug,
+} from "@/utils/docs-types";
+
+export { type DocTreeNode, standardizeDocName, standardizeDocSlug };
 
 // interface Author {
 //   name: string;
@@ -32,16 +39,6 @@ const docsDirectory = join(process.cwd(), DOCS_PATH);
 
 function joinDocsDirectory(...paths: string[]) {
   return join(docsDirectory, ...paths);
-}
-
-export function standardizeDocSlug(slug: string) {
-  return slug.toLocaleLowerCase();
-}
-
-export function standardizeDocName(name: string) {
-  return name
-    .replace(/-/g, " ")
-    .replace(/(^\w{1})|(\s+\w{1})/g, (letter) => letter.toUpperCase());
 }
 
 export async function traverseDirectory(
@@ -133,13 +130,6 @@ export async function getAllDocs(
   }
 
   return docs;
-}
-
-export interface DocTreeNode {
-  title: string;
-  slugs: string[];
-  index?: number;
-  children?: DocTreeNode[];
 }
 
 function createNode(slugs: string[], title?: string): DocTreeNode {

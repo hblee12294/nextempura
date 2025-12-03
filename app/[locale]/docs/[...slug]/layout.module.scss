@@ -3,8 +3,13 @@
 .layout {
     padding: 0 var(--page-padding-hrz);
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 260px 1fr;
+    gap: 2rem;
 
     @include max-width-page;
     @include min-fullscreen;
+
+    > div:first-child {
+        border-right: 1px solid var(--border-color);
+    }
 }

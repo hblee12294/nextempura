@@ -48,6 +48,14 @@
   --placeholder-rgb: 235, 235, 235;
   --placeholder-2-rgb: 215, 215, 215;
 
+  /* New variables mapping */
+  --foreground: rgb(var(--font-color-rgb));
+  --foreground-secondary: rgb(var(--font-color-weak-rgb));
+  --background: rgb(var(--background-rgb));
+  --background-secondary: rgb(var(--placeholder-rgb));
+  --border-color: rgb(var(--placeholder-2-rgb));
+  --primary: var(--accent-blue-hex);
+
   --blob-1: 26% 74% 59% 41% / 59% 64% 36% 41%;
   --blob-2: 24% 76% 35% 65% / 27% 36% 64% 73%;
   --blob-3: 75% 25% 25% 75% / 45% 61% 39% 55%;

@@ -1,24 +1,38 @@
-import { Link } from "@/navigation";
-import { type DocTreeNode, standardizeDocName } from "@/utils/docs";
+"use client";
+
+import { Link, usePathname } from "@/navigation";
+import { type DocTreeNode, standardizeDocName } from "@/utils/docs-types";
+import cn from "classnames";
 
 import styles from "./SideNav.module.scss";
-
-function Node({ node, path }: { node: DocTreeNode; path: string }) {
+function Section({ node }: { node: DocTreeNode }) {
   return (
-    <li>
-      <div>
-        <Link href={`/docs/${path}`}>{standardizeDocName(node.title)}</Link>
+    <li className={styles.section}>
+      <div className={styles.sectionHeader}>
+        <span className={styles.sectionTitle}>
+          {standardizeDocName(node.title)}
+        </span>
       </div>
-
-      <ul>{renderDocTree(node.children)}</ul>
+      <ul className={styles.sectionList}>{renderDocTree(node.children)}</ul>
     </li>
   );
 }
 
 function Leaf({ node, path }: { node: DocTreeNode; path: string }) {
+  const pathname = usePathname();
+  const href = `/docs/${path}`;
+  const isActive = pathname === href;
+
   return (
     <li>
-      <Link href={`/docs/${path}`}>{node.title}</Link>
+      <Link
+        href={href}
+        className={cn(styles.link, {
+          [styles.linkActive]: isActive,
+        })}
+      >
+        {node.title}
+      </Link>
     </li>
   );
 }
@@ -44,7 +58,7 @@ function renderDocTree(tree?: DocTreeNode[]) {
     const path = node.slugs.join("/");
 
     if (node.children) {
-      return <Node key={path} node={node} path={path}></Node>;
+      return <Section key={path} node={node} />;
     } else {
       return <Leaf key={path} node={node} path={path}></Leaf>;
     }
