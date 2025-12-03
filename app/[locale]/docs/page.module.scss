@@ -142,3 +142,69 @@ $morph-duration: 20s;
     transform: scale(1) rotate(360deg);
   }
 }
+
+.blob4 {
+  background-color: var(--accent-green-hex);
+  border-radius: var(--blob-7);
+  animation: morph4 $morph-duration ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.blob5 {
+  background-color: var(--accent-purple-hex);
+  border-radius: var(--blob-8);
+  animation: morph5 $morph-duration ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+.blob6 {
+  background-color: var(--accent-teal-hex);
+  border-radius: var(--blob-9);
+  animation: morph6 $morph-duration ease-in-out infinite;
+
+  @include reduced-motion {
+    animation: none;
+  }
+}
+
+@keyframes morph4 {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.05) rotate(-180deg);
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
+  }
+}
+
+@keyframes morph5 {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(0.9, 1.1) rotate(180deg);
+  }
+  100% {
+    transform: scale(1) rotate(360deg);
+  }
+}
+
+@keyframes morph6 {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1, 0.9) rotate(-180deg);
+  }
+  100% {
+    transform: scale(1) rotate(-360deg);
+  }
+}

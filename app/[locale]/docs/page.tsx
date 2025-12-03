@@ -21,7 +21,7 @@ export default async function Docs({ params }: { params: { locale: string } }) {
                   <div
                     className={cn(
                       styles.icon,
-                      styles[`blob${(index % 3) + 1}`],
+                      styles[`blob${(index % 6) + 1}`],
                     )}
                   ></div>
                 </div>
