@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Noto_Sans_SC } from "next/font/google";
+import { Noto_Sans, Noto_Sans_SC } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { ThemeProvider } from "next-themes";
 
@@ -8,7 +8,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DEFAULT_LOCALE } from "@/configs/locales";
 
-const font = Noto_Sans_SC({ subsets: ["latin"] });
+const notoSans = Noto_Sans({
+  subsets: ["latin"],
+  variable: "--font-noto-sans",
+});
+
+const notoSansSC = Noto_Sans_SC({
+  subsets: ["latin"],
+  variable: "--font-noto-sans-sc",
+});
 
 export const metadata: Metadata = {
   title: "Nextempura",
@@ -23,8 +31,11 @@ export default function RootLayout({
   params: { locale: string };
   children: React.ReactNode;
 }>) {
+  const locale = params.locale || DEFAULT_LOCALE;
+  const font = locale === "zh" ? notoSansSC : notoSans;
+
   return (
-    <html lang={params.locale || DEFAULT_LOCALE} suppressHydrationWarning>
+    <html lang={locale} suppressHydrationWarning>
       <body className={font.className}>
         <ThemeProvider>
           <Header></Header>
