@@ -1,17 +1,19 @@
-import { useTranslations } from "next-intl";
+import { getTranslations } from "next-intl/server";
 import cn from "classnames";
 
 import styles from "./page.module.scss";
-import { PRODUCTS } from "@/configs/products";
+import { getProducts } from "@/configs/products";
 import { Link } from "@/navigation";
 
-export default function Docs() {
-  const t = useTranslations("Products");
+export default async function Docs({ params }: { params: { locale: string } }) {
+  const locale = params.locale;
+  const products = await getProducts(locale);
+  const t = await getTranslations("Products");
 
   return (
     <div className={styles.page}>
       <ul className={styles.productsGrid}>
-        {PRODUCTS.map(({ id, docPath }, index) => {
+        {products.map(({ id, docPath }, index) => {
           return (
             <li key={id} className={styles.productBlock}>
               <Link href={`/docs/${docPath}`}>

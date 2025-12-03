@@ -11,17 +11,21 @@
     "zh": "中文"
   },
   "Products": {
-    "ebi": {
-      "name": "Ebi",
-      "description": "Ebi 是一种很受欢迎的天妇罗配料，几乎可以在所有天妇罗菜肴中找到。"
+    "getting-started": {
+      "name": "快速开始",
+      "description": "快速入门指南和项目概述，让您快速上手 Nextempura。"
     },
-    "sakana": {
-      "name": "Sakana",
-      "description": "Sakana 是将小鱼片或整条小鱼做成的天妇罗块。"
+    "configuration": {
+      "name": "配置",
+      "description": "了解如何配置和自定义 Nextempura 以满足您的需求。"
     },
-    "kabocha": {
-      "name": "Kabocha",
-      "description": "Kabocha 是一种日本南瓜，皮薄，通常呈深绿色，果肉呈橙色。"
+    "content": {
+      "name": "内容",
+      "description": "编写和组织文档内容的指南。"
+    },
+    "customization": {
+      "name": "自定义",
+      "description": "自定义文档网站的外观和样式。"
     }
   },
   "About": {

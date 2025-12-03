@@ -11,17 +11,21 @@
     "zh": "中文"
   },
   "Products": {
-    "ebi": {
-      "name": "Ebi",
-      "description": "Ebi are a popular tempura ingredient that can be found on virtually all tempura dishes."
+    "getting-started": {
+      "name": "Getting Started",
+      "description": "Quick start guide and project overview to get you up and running with Nextempura."
     },
-    "sakana": {
-      "name": "Sakana",
-      "description": "Sakana are small fillets or whole small fish which are made into tempura pieces."
+    "configuration": {
+      "name": "Configuration",
+      "description": "Learn how to configure and customize Nextempura for your needs."
     },
-    "kabocha": {
-      "name": "Kabocha",
-      "description": "Kabocha are Japanese pumpkin with a thin, typically dark green skin and orange flesh."
+    "content": {
+      "name": "Content",
+      "description": "Guide to writing and organizing your documentation content."
+    },
+    "customization": {
+      "name": "Customization",
+      "description": "Customize the appearance and styling of your documentation site."
     }
   },
   "About": {
