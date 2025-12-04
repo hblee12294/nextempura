@@ -13,10 +13,10 @@ export default async function Docs({ params }: { params: { locale: string } }) {
   return (
     <div className={styles.page}>
       <ul className={styles.productsGrid}>
-        {products.map(({ id, docPath }, index) => {
+        {products.map(({ id, docPath, title }, index) => {
           return (
             <li key={id} className={styles.productBlock}>
-              <Link href={`/docs/${docPath}`}>
+              <Link href={`/docs${docPath}`}>
                 <div className={styles.coverImage}>
                   <div
                     className={cn(
@@ -25,7 +25,9 @@ export default async function Docs({ params }: { params: { locale: string } }) {
                     )}
                   ></div>
                 </div>
-                <h3 className={styles.productTitle}>{t(`${id}.name`)}</h3>
+                <h3 className={styles.productTitle}>
+                  {title || t(`${id}.name`)}
+                </h3>
                 <p className={styles.productDesc}>{t(`${id}.description`)}</p>
               </Link>
             </li>
