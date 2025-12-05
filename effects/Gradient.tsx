@@ -44,6 +44,7 @@ export function Gradient() {
 
     p5.setup = () => {
       p5.createCanvas(stage.clientWidth, stage.clientHeight, p5.WEBGL);
+      p5.pixelDensity(1);
     };
 
     p5.draw = () => {
@@ -88,18 +89,16 @@ export function Gradient() {
         let j = 0;
 
         while (j < width * 2 + size / 2) {
-          let y0 = y + Math.sin(delta3 + j + x) * waveSize;
+          const y0 = y + Math.sin(delta3 + j + x) * waveSize;
 
           delta3 += 0.000008;
 
-          let y2 = y + size * 1.2 + Math.sin(delta3 + j + x) * waveSize;
+          const y2 = y + size * 1.2 + Math.sin(delta3 + j + x) * waveSize;
 
-          if (j % 2 == 0) {
-            p5.fill(colors[i]);
-            p5.vertex(x, y0); //left 1
-            p5.fill(colors[i + 1]);
-            p5.vertex(x + size / 2, y2); //tip 3
-          }
+          p5.fill(colors[i]);
+          p5.vertex(x, y0); //left 1
+          p5.fill(colors[i + 1]);
+          p5.vertex(x + size / 2, y2); //tip 3
 
           x += size / 2;
           j += size / 2;
@@ -142,12 +141,10 @@ export function Gradient() {
           let y2 = y + size * 1.2 + Math.sin(delta2 + j + x) * waveSize;
           y2 += Math.sin((delta2 + j + x) * 10) * 5;
 
-          if (j % 2 == 0) {
-            p5.fill(colors[i]);
-            p5.vertex(x, y0); //left 1
-            p5.fill(colors[i + 1]);
-            p5.vertex(x + size / 2, y2); //tip 3
-          }
+          p5.fill(colors[i]);
+          p5.vertex(x, y0); //left 1
+          p5.fill(colors[i + 1]);
+          p5.vertex(x + size / 2, y2); //tip 3
 
           x += size / 2;
           j += size / 2;
@@ -182,21 +179,20 @@ export function Gradient() {
         let j = 0;
 
         while (j < width * 2 + size / 2) {
-          let y0 = y + Math.sin(delta1 + j + x) * waveSize;
+          const y0 = y + Math.sin(delta1 + j + x) * waveSize;
 
-          delta1 += 0.00001;
+          delta1 += 0.00002;
 
-          let y2 = y + size * 1.2 + Math.sin(delta1 + j + x) * waveSize;
+          const y2 = y + size * 1.2 + Math.sin(delta1 + j + x) * waveSize;
 
-          if (j % 2 == 0) {
-            p5.fill(colors[i]);
-            p5.vertex(x, y0); //left 1
-            p5.fill(colors[i + 1]);
-            p5.vertex(x + size / 2, y2); //tip 3
-          }
+          p5.fill(colors[i]);
+          p5.vertex(x, y0); //left 1
+          p5.fill(colors[i + 1]);
+          p5.vertex(x + size / 2, y2); //tip 3
 
-          x += size / 2;
-          j += size / 2;
+          // Step by size instead of size/2
+          x += size;
+          j += size;
         }
         x = -(size / 2);
         y += size;
@@ -228,22 +224,20 @@ export function Gradient() {
         let j = 0;
 
         while (j < width * 2 + size / 2) {
-          let d = delta + j + x;
+          const d = delta + j + x;
           let y0 = y + Math.sin(d) * waveSize;
           y0 += Math.sin(d * 10) * 10;
 
           delta += 0.000005;
 
-          let d2 = delta + j + x;
+          const d2 = delta + j + x;
           let y2 = y + size * 1.2 + Math.sin(d2) * waveSize;
           y2 += Math.sin(d2 * 10) * 10;
 
-          if (j % 2 == 0) {
-            p5.fill(colors[i]);
-            p5.vertex(x, y0); //left 1
-            p5.fill(colors[i + 1]);
-            p5.vertex(x + size / 2, y2); //tip 3
-          }
+          p5.fill(colors[i]);
+          p5.vertex(x, y0); //left 1
+          p5.fill(colors[i + 1]);
+          p5.vertex(x + size / 2, y2); //tip 3
 
           x += size / 2;
           j += size / 2;
