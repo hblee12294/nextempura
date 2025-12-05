@@ -9,9 +9,18 @@ function Section({ node }: { node: DocTreeNode }) {
   return (
     <li className={styles.section}>
       <div className={styles.sectionHeader}>
-        <span className={styles.sectionTitle}>
-          {standardizeDocName(node.title)}
-        </span>
+        {node.hasIndex ? (
+          <Link
+            href={`/docs/${node.slugs.join("/")}`}
+            className={styles.sectionTitle}
+          >
+            {standardizeDocName(node.title)}
+          </Link>
+        ) : (
+          <span className={styles.sectionTitle}>
+            {standardizeDocName(node.title)}
+          </span>
+        )}
       </div>
       <ul className={styles.sectionList}>{renderDocTree(node.children)}</ul>
     </li>
@@ -68,6 +77,20 @@ function renderDocTree(tree?: DocTreeNode[]) {
 export function SideNav({ tree }: { tree: DocTreeNode }) {
   return (
     <aside className={styles.side}>
+      <div className={styles.sectionHeader}>
+        {tree.hasIndex ? (
+          <Link
+            href={`/docs/${tree.slugs.join("/")}`}
+            className={styles.sectionTitle}
+          >
+            {standardizeDocName(tree.title)}
+          </Link>
+        ) : (
+          <span className={styles.sectionTitle}>
+            {standardizeDocName(tree.title)}
+          </span>
+        )}
+      </div>
       <ul className={styles.nav}>{renderDocTree(tree.children)}</ul>
     </aside>
   );

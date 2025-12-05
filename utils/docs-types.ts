@@ -3,6 +3,7 @@ export interface DocTreeNode {
   slugs: string[];
   index?: number;
   children?: DocTreeNode[];
+  hasIndex?: boolean;
 }
 
 export function standardizeDocName(name: string) {

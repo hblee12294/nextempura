@@ -66,7 +66,7 @@ export function Gradient() {
       _x: number,
       _y: number,
       _r: number,
-      _s: number
+      _s: number,
     ) {
       p5.push();
 

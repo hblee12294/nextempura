@@ -171,6 +171,7 @@ async function constructDocTree(
           if (doc.index !== undefined) {
             tree.index = doc.index as number;
           }
+          tree.hasIndex = true;
         } else if (dir.endsWith(".md")) {
           const currentSlugs = [
             ...slugs,
